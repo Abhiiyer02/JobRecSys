@@ -6,6 +6,50 @@
      setTimeout("preventBack()", 0);
      window.onunload = function () { null };
     </script>--%>
+    <style type="text/css">
+        .auto-style1 {
+            width: 368px;
+            height: 57px;
+        }
+        .auto-style2 {
+            width: 364px;
+            height: 57px;
+        }
+        .auto-style3 {
+            width: 154px;
+            height: 57px;
+        }
+        .auto-style4 {
+            width: 140px;
+            height: 57px;
+        }
+        .auto-style5 {
+            width: 100%;
+            height: 302px;
+        }
+        .auto-style6 {
+            width: 368px;
+            height: 14px;
+        }
+        .auto-style7 {
+            width: 364px;
+            height: 14px;
+        }
+        .auto-style8 {
+            width: 154px;
+            height: 14px;
+        }
+        .auto-style9 {
+            width: 140px;
+            height: 14px;
+        }
+        .auto-style10 {
+            width: 510px;
+        }
+        .auto-style11 {
+            width: 364px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <asp:Panel ID="panelLogin" runat="server">
@@ -29,12 +73,12 @@
             <tr>
                 <td align="center" valign="top" 
                     style="width: 510px;">
-                    <table style="width: 100%; background-image: url('../images/loginbg10.jpg'); height: 302px;" 
-                        align="center">
+                    <table style="background-image: url('../images/loginbg10.jpg'); background-repeat: no-repeat" 
+                        align="center" class="auto-style5">
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; color: #006699; width: 239px">
+                            <td style="text-align: left; color: #006699; " class="auto-style11">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -44,7 +88,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: center; color: #006699; width: 239px">
+                            <td style="text-align: center; color: #006699; " class="auto-style11">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -54,7 +98,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style11">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -64,7 +108,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px; color: #006699;">
+                            <td style="text-align: left; color: #006699;" class="auto-style11">
                                 <b>Candidate Id</b></td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -74,7 +118,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style11">
                                 <asp:TextBox ID="txtUserId" runat="server" Width="200px"></asp:TextBox>
                             </td>
                             <td style="text-align: left; width: 154px">
@@ -88,7 +132,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px; color: #006699;">
+                            <td style="text-align: left; color: #006699;" class="auto-style11">
                                 <b>Password</b></td>
                             <td style="text-align: left; width: 154px">
                                 &nbsp;</td>
@@ -98,7 +142,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style11">
                                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="200px"></asp:TextBox>
                             </td>
                             <td style="text-align: left; width: 154px">
@@ -110,45 +154,37 @@
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td style="width: 368px">
-                                &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td class="auto-style6">
+                                </td>
+                            <td style="text-align: left; " class="auto-style7">
                                 <asp:ImageButton ID="btnLogin" runat="server" ImageUrl="../images/CAUVGTUR.jpg" 
                                     ValidationGroup="login" Height="34px" 
                                     Width="83px" onclick="btnLogin_Click" />
                             </td>
-                            <td style="width: 154px">
-                                &nbsp;</td>
-                            <td style="width: 140px">
-                                &nbsp;</td>
+                            <td class="auto-style8">
+                                </td>
+                            <td class="auto-style9">
+                                </td>
                         </tr>
                         <tr>
-                            <td style="width: 368px">
+                            <td class="auto-style1">
+
+                                </td>
+                            <td style="text-align: left; " class="auto-style2">
+                                Not Registered yet?&nbsp; <a href="UserRegister.aspx">Signup</a></td>
+                            <td class="auto-style3">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
-                                &nbsp;</td>
-                            <td style="width: 154px">
-                                &nbsp;</td>
-                            <td style="width: 140px">
-                                &nbsp;</td>
+                            <td class="auto-style4">
+                                </td>
                         </tr>
-                        <tr>
-                            <td style="width: 368px">
-                                &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
-                                &nbsp;</td>
-                            <td style="width: 154px">
-                                &nbsp;</td>
-                            <td style="width: 140px">
-                                &nbsp;</td>
-                        </tr>
+                        
                     </table>
                 </td>
             </tr>
                 <tr>
                     <td>
                        <table ID="tblMessage" border="0" cellpadding="4" cellspacing="4" 
-                        class="Error" align="center" style="width: 510px">
+                        class="auto-style10" align="center">
                         <tr>
                             <td style="text-align: left">
                                 <div ID="dvIcon" class="Error">
@@ -162,7 +198,7 @@
                     </table></td>
                 </tr>
         </table>
-
+            
         
          </div>
          </div>

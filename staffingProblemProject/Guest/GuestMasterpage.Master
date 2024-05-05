@@ -70,9 +70,9 @@
            <li class="drop-down"><a href="">LOGIN / SIGNUP</a>
             <ul>
                 <li><a href="AdminLogin.aspx">ADMIN LOGIN</a></li> 
-                <li><a href="UserRegister.aspx">APPLICANT SIGNUP</a></li>  
+                <%--<li><a href="UserRegister.aspx">APPLICANT SIGNUP</a></li>--%>  
                 <li><a href="_CandidateLogin.aspx">APPLICANT LOGIN</a></li>  
-              <li><a href="Register.aspx">COMPANY SIGNUP</a></li>            
+              <%--<li><a href="Register.aspx">COMPANY SIGNUP</a></li>--%>            
               <li><a href="Login.aspx">COMPANY LOGIN</a></li>
                           
             </ul>

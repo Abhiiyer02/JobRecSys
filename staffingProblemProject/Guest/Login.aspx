@@ -1,11 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Guest/GuestMasterpage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="staffingProblemProject.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <%--<link href="../ThemeBlue.css" rel="Stylesheet" type="text/css" />--%>
+    <%--<link href="../ThemeBlue.css" rel="Stylesheet" type="text/css" />--%>
  <%--<script type="text/javascript">
      function preventBack() { window.history.forward(); }
      setTimeout("preventBack()", 0);
      window.onunload = function () { null };
     </script>--%>
+    <style type="text/css">
+        .auto-style1 {
+            width: 332px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="panelLogin" runat="server">
@@ -29,12 +34,12 @@
             <tr>
                 <td align="center" valign="top" 
                     style="width: 510px;">
-                    <table style="width: 100%; background-image: url('../images/loginbg10.jpg'); height: 302px;" 
+                    <table style="width: 100%; background-image: url('../images/loginbg10.jpg'); height: 302px; bakcground-repeat: no-repeat " 
                         align="center">
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; color: #006699; width: 239px">
+                            <td style="text-align: left; color: #006699; " class="auto-style1">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -44,7 +49,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: center; color: #006699; width: 239px">
+                            <td style="text-align: center; color: #006699; " class="auto-style1">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -54,7 +59,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style1">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -64,7 +69,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px; color: #006699;">
+                            <td style="text-align: left; color: #006699;" class="auto-style1">
                                 <b>Member Id</b></td>
                             <td style="width: 154px">
                                 &nbsp;</td>
@@ -74,7 +79,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style1">
                                 <asp:TextBox ID="txtMemberId" runat="server" Width="200px"></asp:TextBox>
                             </td>
                             <td style="text-align: left; width: 154px">
@@ -88,7 +93,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px; color: #006699;">
+                            <td style="text-align: left; color: #006699;" class="auto-style1">
                                 <b>Password</b></td>
                             <td style="text-align: left; width: 154px">
                                 &nbsp;</td>
@@ -98,7 +103,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style1">
                                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="200px"></asp:TextBox>
                             </td>
                             <td style="text-align: left; width: 154px">
@@ -112,7 +117,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style1">
                                 <asp:ImageButton ID="btnLogin" runat="server" ImageUrl="../images/CAUVGTUR.jpg" 
                                     ValidationGroup="login" Height="34px" 
                                     Width="83px" onclick="btnLogin_Click" />
@@ -125,8 +130,8 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
-                                &nbsp;</td>
+                            <td style="text-align: left; " class="auto-style1">
+                                &nbsp;<p>Not Registered yet? <a href="Register.aspx">Signup</a></p></td>
                             <td style="width: 154px">
                                 &nbsp;</td>
                             <td style="width: 140px">
@@ -135,7 +140,7 @@
                         <tr>
                             <td style="width: 368px">
                                 &nbsp;</td>
-                            <td style="text-align: left; width: 239px">
+                            <td style="text-align: left; " class="auto-style1">
                                 &nbsp;</td>
                             <td style="width: 154px">
                                 &nbsp;</td>
