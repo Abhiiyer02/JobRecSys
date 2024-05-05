@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7DA1B672-A54C-48CA-AA20-CB3D9120001B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>staffingProblemProject</RootNamespace>
+    <AssemblyName>staffingProblemProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net462\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.IO.3.8.0\lib\net462\Accord.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="Emails">
+      <HintPath>..\..\..\..\..\SOFTWARES\PC_SUITES\Emails.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminAccount.aspx" />
+    <Content Include="Admin\AdminHomepage.aspx" />
+    <Content Include="Admin\ExistingUsers.aspx" />
+    <Content Include="Admin\NewUsers.aspx" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\about.jpg" />
+    <Content Include="assets\img\apple-touch-icon.png" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\portfolio\portfolio-1.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-2.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-3.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-4.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-5.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-6.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-7.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-8.jpg" />
+    <Content Include="assets\img\portfolio\portfolio-9.jpg" />
+    <Content Include="assets\img\slide\slide-1.jpg" />
+    <Content Include="assets\img\slide\slide-2.jpg" />
+    <Content Include="assets\img\slide\slide-3.jpg" />
+    <Content Include="assets\img\team\team-1.jpg" />
+    <Content Include="assets\img\team\team-2.jpg" />
+    <Content Include="assets\img\team\team-3.jpg" />
+    <Content Include="assets\img\team\team-4.jpg" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\vendor\animate.css\animate.css" />
+    <Content Include="assets\vendor\animate.css\animate.min.css" />
+    <Content Include="assets\vendor\aos\aos.css" />
+    <Content Include="assets\vendor\aos\aos.js" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\vendor\boxicons\css\animations.css" />
+    <Content Include="assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="assets\vendor\counterup\counterup.min.js" />
+    <Content Include="assets\vendor\icofont\icofont.min.css" />
+    <Content Include="assets\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="assets\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="assets\vendor\jquery-sticky\jquery.sticky.js" />
+    <Content Include="assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="assets\vendor\jquery\jquery.min.js" />
+    <Content Include="assets\vendor\php-email-form\validate.js" />
+    <Content Include="assets\vendor\venobox\venobox.css" />
+    <Content Include="assets\vendor\venobox\venobox.js" />
+    <Content Include="assets\vendor\venobox\venobox.min.js" />
+    <Content Include="assets\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="Candidate\CandidateAccount.aspx" />
+    <Content Include="Candidate\frmModel.aspx" />
+    <Content Include="Candidate\frmResults.aspx" />
+    <Content Include="Candidate\_JobPrediction.aspx" />
+    <Content Include="Candidate\_JobReccPatterns.aspx" />
+    <Content Include="Candidate\_ProfileUpdate.aspx" />
+    <Content Include="Candidate\_Jobs.aspx" />
+    <Content Include="forms\Readme.txt" />
+    <Content Include="Guest\AdminLogin.aspx" />
+    <Content Include="Guest\CompanyLogos\Accenture.jpg" />
+    <Content Include="Guest\CompanyLogos\Accenture.png" />
+    <Content Include="Guest\CompanyLogos\Madhu.jpeg" />
+    <Content Include="Guest\Index.aspx" />
+    <Content Include="Guest\Login.aspx" />
+    <Content Include="Guest\Register.aspx" />
+    <Content Include="Guest\UserRegister.aspx" />
+    <Content Include="Guest\_CandidateLogin.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\ad.png" />
+    <Content Include="images\admin.jpg" />
+    <Content Include="images\adminicon.jpg" />
+    <Content Include="images\adminicon1.jpg" />
+    <Content Include="images\Banner1.jpg" />
+    <Content Include="images\Banner2.jpg" />
+    <Content Include="images\Banner3.jpg" />
+    <Content Include="images\Banner4.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.jpg" />
+    <Content Include="images\black_file.gif" />
+    <Content Include="images\blue_file.gif" />
+    <Content Include="images\CAUVGTUR.jpg" />
+    <Content Include="images\Changepwdicon.jpg" />
+    <Content Include="images\cities.png" />
+    <Content Include="images\computerapplication.JPG" />
+    <Content Include="images\contact-us.png" />
+    <Content Include="images\contact.jpg" />
+    <Content Include="images\Copy of 1.jpg" />
+    <Content Include="images\CourseTop.jpg" />
+    <Content Include="images\course_delivery.gif" />
+    <Content Include="images\crimetypes.jpg" />
+    <Content Include="images\deletebtn.jpg" />
+    <Content Include="images\DeleteRed.png" />
+    <Content Include="images\demo\140x120.gif" />
+    <Content Include="images\demo\150x150.gif" />
+    <Content Include="images\demo\190x90.gif" />
+    <Content Include="images\demo\240x90.gif" />
+    <Content Include="images\demo\300x120.gif" />
+    <Content Include="images\demo\440x215.gif" />
+    <Content Include="images\demo\60x60.gif" />
+    <Content Include="images\demo\620x230.gif" />
+    <Content Include="images\demo\80x80.gif" />
+    <Content Include="images\demo\940x340.gif" />
+    <Content Include="images\demo\avatar.gif" />
+    <Content Include="images\demo\imgl.gif" />
+    <Content Include="images\demo\imgr.gif" />
+    <Content Include="images\demo\index.html" />
+    <Content Include="images\demo\worldmap.gif" />
+    <Content Include="images\download.jpg" />
+    <Content Include="images\ebsl_section_courses.jpg" />
+    <Content Include="images\ed1.jpg" />
+    <Content Include="images\ed2.jpg" />
+    <Content Include="images\ed3.jpg" />
+    <Content Include="images\ed4.jpg" />
+    <Content Include="images\ed5.jpg" />
+    <Content Include="images\ed6.jpg" />
+    <Content Include="images\edit-10-xxl.png" />
+    <Content Include="images\EditIcon.jpg" />
+    <Content Include="images\eit-education.jpg" />
+    <Content Include="images\featured_bg.gif" />
+    <Content Include="images\folder-down-icon.jpg" />
+    <Content Include="images\folder-edit-icon.jpg" />
+    <Content Include="images\folder-process-icon.jpg" />
+    <Content Include="images\form_input_long.gif" />
+    <Content Include="images\fw2.jpg" />
+    <Content Include="images\gal1.jpg" />
+    <Content Include="images\gal2.jpg" />
+    <Content Include="images\gal3.jpg" />
+    <Content Include="images\gal4.jpg" />
+    <Content Include="images\gal5.jpg" />
+    <Content Include="images\gal6.jpg" />
+    <Content Include="images\Grid_ActionDelete.gif" />
+    <Content Include="images\IE.png" />
+    <Content Include="images\image12.jpg" />
+    <Content Include="images\image3.jpg" />
+    <Content Include="images\img1.jpg" />
+    <Content Include="images\img2.jpg" />
+    <Content Include="images\index.html" />
+    <Content Include="images\Index1.jpg" />
+    <Content Include="images\Index2.jpg" />
+    <Content Include="images\Index3.jpg" />
+    <Content Include="images\Index4.jpg" />
+    <Content Include="images\Index5.jpg" />
+    <Content Include="images\Index6.jpg" />
+    <Content Include="images\job1.jpg" />
+    <Content Include="images\job2.jpg" />
+    <Content Include="images\job3.png" />
+    <Content Include="images\job4.jpg" />
+    <Content Include="images\job5.jpg" />
+    <Content Include="images\job6.jpg" />
+    <Content Include="images\left.png" />
+    <Content Include="images\li.gif" />
+    <Content Include="images\lib.png" />
+    <Content Include="images\libraian.png" />
+    <Content Include="images\library.jpg" />
+    <Content Include="images\li_a.gif" />
+    <Content Include="images\loginbg10.jpg" />
+    <Content Include="images\loginnn.jpg" />
+    <Content Include="images\main_bg.gif" />
+    <Content Include="images\members-icon.jpg" />
+    <Content Include="images\Message_Error.png" />
+    <Content Include="images\Message_Information.png" />
+    <Content Include="images\Message_Success.png" />
+    <Content Include="images\Message_Warning.png" />
+    <Content Include="images\overlay.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\index.html" />
+    <Content Include="images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_square\index.html" />
+    <Content Include="images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\facebook\index.html" />
+    <Content Include="images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="images\prettyPhoto\index.html" />
+    <Content Include="images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\index.html" />
+    <Content Include="images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_square\index.html" />
+    <Content Include="images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="images\quicknav_bg.gif" />
+    <Content Include="images\registericon.png" />
+    <Content Include="images\Register_Now_Icon.jpg" />
+    <Content Include="images\resetpwd.jpg" />
+    <Content Include="images\search.gif" />
+    <Content Include="images\search_bg.gif" />
+    <Content Include="images\shadow.gif" />
+    <Content Include="images\slide1.jpg" />
+    <Content Include="images\slide2.jpg" />
+    <Content Include="images\slide3.jpg" />
+    <Content Include="images\social-sprite.gif" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\st.jpg" />
+    <Content Include="images\stannes1.JPG" />
+    <Content Include="images\stannes2.JPG" />
+    <Content Include="images\stannes3.JPG" />
+    <Content Include="images\stannes4.JPG" />
+    <Content Include="images\stannes5.JPG" />
+    <Content Include="images\stannes6.JPG" />
+    <Content Include="images\stannes7.jpg" />
+    <Content Include="images\StudentBanner.png" />
+    <Content Include="images\students.jpg" />
+    <Content Include="images\submit.gif" />
+    <Content Include="images\t5.png" />
+    <Content Include="images\ta-mark.png" />
+    <Content Include="images\teacherinclass.jpg" />
+    <Content Include="images\templatemo_header_01_bg.jpg" />
+    <Content Include="images\templatemo_header_bg.jpg" />
+    <Content Include="images\templatemo_side_column_divider.jpg" />
+    <Content Include="images\topnav_left.gif" />
+    <Content Include="images\topnav_right.gif" />
+    <Content Include="images\unilife_banner.jpg" />
+    <Content Include="images\userpic.gif" />
+    <Content Include="Member\MemberAccount.aspx" />
+    <Content Include="Member\MemberHomepage.aspx" />
+    <Content Include="Member\UpdateProfile.aspx" />
+    <Content Include="Member\ViewUsers.aspx" />
+    <Content Include="Member\_AppliedCandidates.aspx" />
+    <Content Include="Member\_PostAds.aspx" />
+    <Content Include="Member\_Search.aspx" />
+    <Content Include="Member\_ViewJobAds.aspx" />
+    <Content Include="Signout.aspx" />
+    <Content Include="ThemeBlue.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminAccount.aspx.cs">
+      <DependentUpon>AdminAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAccount.aspx.designer.cs">
+      <DependentUpon>AdminAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHomepage.aspx.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminHomepage.aspx.designer.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMasterpage.Master.cs">
+      <DependentUpon>AdminMasterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMasterpage.Master.designer.cs">
+      <DependentUpon>AdminMasterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExistingUsers.aspx.cs">
+      <DependentUpon>ExistingUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExistingUsers.aspx.designer.cs">
+      <DependentUpon>ExistingUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewUsers.aspx.cs">
+      <DependentUpon>NewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewUsers.aspx.designer.cs">
+      <DependentUpon>NewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL.cs" />
+    <Compile Include="Candidate\CandidateAccount.aspx.cs">
+      <DependentUpon>CandidateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateAccount.aspx.designer.cs">
+      <DependentUpon>CandidateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidateMP.Master.cs">
+      <DependentUpon>CandidateMP.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateMP.Master.designer.cs">
+      <DependentUpon>CandidateMP.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\frmModel.aspx.cs">
+      <DependentUpon>frmModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\frmModel.aspx.designer.cs">
+      <DependentUpon>frmModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\frmResults.aspx.cs">
+      <DependentUpon>frmResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\frmResults.aspx.designer.cs">
+      <DependentUpon>frmResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\_JobPrediction.aspx.cs">
+      <DependentUpon>_JobPrediction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\_JobPrediction.aspx.designer.cs">
+      <DependentUpon>_JobPrediction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\_JobReccPatterns.aspx.cs">
+      <DependentUpon>_JobReccPatterns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\_JobReccPatterns.aspx.designer.cs">
+      <DependentUpon>_JobReccPatterns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\_ProfileUpdate.aspx.cs">
+      <DependentUpon>_ProfileUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\_ProfileUpdate.aspx.designer.cs">
+      <DependentUpon>_ProfileUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\_Jobs.aspx.cs">
+      <DependentUpon>_Jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\_Jobs.aspx.designer.cs">
+      <DependentUpon>_Jobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRules.cs" />
+    <Compile Include="DL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\GuestMasterpage.Master.cs">
+      <DependentUpon>GuestMasterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\GuestMasterpage.Master.designer.cs">
+      <DependentUpon>GuestMasterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\UserRegister.aspx.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\UserRegister.aspx.designer.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\_CandidateLogin.aspx.cs">
+      <DependentUpon>_CandidateLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\_CandidateLogin.aspx.designer.cs">
+      <DependentUpon>_CandidateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MemberAccount.aspx.cs">
+      <DependentUpon>MemberAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\MemberAccount.aspx.designer.cs">
+      <DependentUpon>MemberAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MemberHomepage.aspx.cs">
+      <DependentUpon>MemberHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\MemberHomepage.aspx.designer.cs">
+      <DependentUpon>MemberHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MemberMasterpage.Master.cs">
+      <DependentUpon>MemberMasterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\MemberMasterpage.Master.designer.cs">
+      <DependentUpon>MemberMasterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ViewUsers.aspx.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ViewUsers.aspx.designer.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\_AppliedCandidates.aspx.cs">
+      <DependentUpon>_AppliedCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\_AppliedCandidates.aspx.designer.cs">
+      <DependentUpon>_AppliedCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\_PostAds.aspx.cs">
+      <DependentUpon>_PostAds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\_PostAds.aspx.designer.cs">
+      <DependentUpon>_PostAds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\_Search.aspx.cs">
+      <DependentUpon>_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\_Search.aspx.designer.cs">
+      <DependentUpon>_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\_ViewJobAds.aspx.cs">
+      <DependentUpon>_ViewJobAds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\_ViewJobAds.aspx.designer.cs">
+      <DependentUpon>_ViewJobAds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Guest\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signout.aspx.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signout.aspx.designer.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminMasterpage.Master" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <None Include="assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <None Include="assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="assets\vendor\boxicons\fonts\boxicons.eot" />
+    <None Include="assets\vendor\boxicons\fonts\boxicons.svg" />
+    <None Include="assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <None Include="assets\vendor\boxicons\fonts\boxicons.woff" />
+    <None Include="assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <None Include="assets\vendor\icofont\fonts\icofont.woff" />
+    <None Include="assets\vendor\icofont\fonts\icofont.woff2" />
+    <None Include="assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Candidate\CandidateMP.Master" />
+    <Content Include="Candidate\Files\TestDataNumerical.csv" />
+    <Content Include="Candidate\Files\TestingDataset.xlsx" />
+    <Content Include="Candidate\Files\TrainDataNumerical.csv" />
+    <Content Include="Candidate\Files\ActualDataset.xlsx" />
+    <None Include="Candidate\Files\TrainingDataset.xls" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DL.xsc">
+      <DependentUpon>DL.xsd</DependentUpon>
+    </None>
+    <None Include="DL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DL.xss">
+      <DependentUpon>DL.xsd</DependentUpon>
+    </None>
+    <Content Include="Guest\GuestMasterpage.Master" />
+    <Content Include="Member\MemberMasterpage.Master" />
+    <None Include="forms\contact.php" />
+    <None Include="images\demo\Thumbs.db" />
+    <None Include="images\Thumbs.db" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Guest\Resumes\" />
+    <Folder Include="Guest\UserPhotos\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1253</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

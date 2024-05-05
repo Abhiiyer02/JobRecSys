@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="staffingProblemProject.BLL" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QVAEQAYUAAQkiAVAAIgGSAiOBCASAYgGAAYCJwCISSk=</HashCode>
+      <FileName>BLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Admin.ExistingUsers" Collapsed="true">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAIAAAAEAQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Admin\ExistingUsers.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Admin.NewUsers" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAADCAAAAAIACAEAAAQAAAAAAEAAAAAACAABIAAAA=</HashCode>
+      <FileName>Admin\NewUsers.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Admin.Topics" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQAAAAAAAAAAAAQAAAAAAAAAABAAAAAAIAAAA=</HashCode>
+      <FileName>Admin\Topics.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Admin.Comments" Collapsed="true">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAACAAAAAAQAAAAAAAAAABAAACAAIAAAA=</HashCode>
+      <FileName>Admin\Comments.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Login" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQACAAAAAAAEAAAAAAAAEAAAAQCAAAEAAAAAJAAgQ=</HashCode>
+      <FileName>Guest\Login.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Register" Collapsed="true">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAKAAAAArBEAAAAAAgCAAABAAAAAgJAIgAAJgAg0=</HashCode>
+      <FileName>Guest\Register.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Member.ManageEmps" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCACwAAAAigFAACAAhACARCAAMgIAjBEAIAAIgAgE=</HashCode>
+      <FileName>Member\ManageEmps.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Member.MemberDeptsDesigs" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAGQAQAAAIEEAIAqwQIAIAIAECCARQIIABAICAgA=</HashCode>
+      <FileName>Member\MemberDeptsDesigs.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Member.MemberProfile" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAAhAADAAAUBAAAACAACgAIAAAgBAIIAAIgAQ0=</HashCode>
+      <FileName>Member\MemberProfile.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Member.ProblemSpecification" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAEAAAAAAwAAABAAAAJABDAEAAAIhAwA=</HashCode>
+      <FileName>Member\ProblemSpecification.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="staffingProblemProject.Member.ViewEmps" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAgAgQAAACgAAAIABAQAAAAJAAAA=</HashCode>
+      <FileName>Member\ViewEmps.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
