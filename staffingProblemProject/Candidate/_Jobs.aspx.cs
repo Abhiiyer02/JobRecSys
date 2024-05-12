@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Net.Mail;
 
 namespace staffingProblemProject.Candidate
 {
@@ -182,6 +183,21 @@ namespace staffingProblemProject.Candidate
                 if (obj.CheckUserAd(Session["UserId"].ToString(), int.Parse(s[1])))
                 {
                     obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]));
+                    System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+                    mail.To.Add("abhijithiyer147@gmail.com");
+                    mail.From = new MailAddress("onlinenotes56@gmail.com", "Email head", System.Text.Encoding.UTF8);
+                    mail.Subject = "This mail is send from asp.net application";
+                    mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                    mail.Body = "This is Email Body Text";
+                    mail.BodyEncoding = System.Text.Encoding.UTF8;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    SmtpClient client = new SmtpClient();
+                    client.Credentials = new System.Net.NetworkCredential("onlinenotes56@gmail.com", "kwaaisxwvqjwbdnz");
+                    client.Port = 587;
+                    client.Host = "smtp.gmail.com";
+                    client.EnableSsl = true;
+                    client.Send(mail);
                     ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Job Applied Successfully')</script>");
                 }
                 else
@@ -189,9 +205,16 @@ namespace staffingProblemProject.Candidate
                     ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Already Applied')</script>");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Server Error!!!')</script>");
+                Exception ex2 = ex;
+                string errorMessage = string.Empty;
+                while (ex2 != null)
+                {
+                    errorMessage += ex2.ToString();
+                    ex2 = ex2.InnerException;
+                }
+                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
             }
         }
 
