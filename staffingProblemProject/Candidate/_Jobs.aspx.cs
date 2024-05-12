@@ -177,18 +177,22 @@ namespace staffingProblemProject.Candidate
             BLL obj = new BLL();
             Button lbtn = (Button)sender;
             string[] s = lbtn.ID.ToString().Split('~');
+            
 
             try
             {
                 if (obj.CheckUserAd(Session["UserId"].ToString(), int.Parse(s[1])))
                 {
+                    DataTable Ad = obj.GetAdsById(int.Parse(s[1]));
+                    DataTable User = obj.GetUserById(Session["UserId"].ToString());
                     obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]));
                     System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-                    mail.To.Add("abhijithiyer147@gmail.com");
-                    mail.From = new MailAddress("onlinenotes56@gmail.com", "Email head", System.Text.Encoding.UTF8);
-                    mail.Subject = "This mail is send from asp.net application";
+                    mail.To.Add(User.Rows[0][5].ToString());
+                    mail.From = new MailAddress("onlinenotes56@gmail.com","Job Portal",  System.Text.Encoding.UTF8);
+                    mail.Subject = "Job Application Submitted for Job ID" + Ad.Rows[0][0];
                     mail.SubjectEncoding = System.Text.Encoding.UTF8;
-                    mail.Body = "This is Email Body Text";
+                    //mail.Body = "your job application for ";
+                    mail.Body = "Your Job Application has been submitted. Job Applicatio details are as follows:<br>Job ID " + Ad.Rows[0][0]+ "<br> Posted by: " + Ad.Rows[0][1]+ "<br> Role:" + Ad.Rows[0][3]+ "<br>&nbsp";
                     mail.BodyEncoding = System.Text.Encoding.UTF8;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
