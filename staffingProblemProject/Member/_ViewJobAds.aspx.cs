@@ -103,7 +103,7 @@ namespace staffingProblemProject.Member
                     row.Controls.Add(cellCompanyName);
 
                     TableCell cellContactNo = new TableCell();
-                    cellContactNo.Width = 200;
+                    cellContactNo.Width = 300;
                     cellContactNo.Text = tab.Rows[i]["SubType"].ToString();
                     row.Controls.Add(cellContactNo);
 

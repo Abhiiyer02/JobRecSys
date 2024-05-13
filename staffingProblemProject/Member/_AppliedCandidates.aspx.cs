@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Collections;
+using System.Net.Mail;
 
 namespace staffingProblemProject.Member
 {
@@ -142,16 +143,20 @@ namespace staffingProblemProject.Member
                     mainrow.Controls.Add(cell2);
 
                     TableHeaderCell cell4 = new TableHeaderCell();
-                    cell4.Text = "ContactNo";
+                    cell4.Text = "Contact No";
                     mainrow.Controls.Add(cell4);
 
                     TableHeaderCell cell5 = new TableHeaderCell();
                     cell5.Text = "Email ID";
                     mainrow.Controls.Add(cell5);
 
-                    TableHeaderCell cell51 = new TableHeaderCell();
-                    cell51.Text = "Skills";
-                    mainrow.Controls.Add(cell51);
+                    TableHeaderCell cell6 = new TableHeaderCell();
+                    cell6.Text = "Skills";
+                    mainrow.Controls.Add(cell6);
+
+                    TableHeaderCell cell7 = new TableHeaderCell();
+                    cell7.Text = "Shortlist";
+                    mainrow.Controls.Add(cell7);
 
                     Table4.Controls.Add(mainrow);
 
@@ -163,7 +168,7 @@ namespace staffingProblemProject.Member
                         tab = obj.GetUserById(arrayRecords[i].ToString());
 
                         TableCell cellResume = new TableCell();
-                        cellResume.Width = 150;
+                        cellResume.Width = 250;
                         cellResume.Font.Bold = true;
                         LinkButton lbtnResume = new LinkButton();
                         lbtnResume.ID = "res~" + tab.Rows[0]["UserId"].ToString();
@@ -194,7 +199,15 @@ namespace staffingProblemProject.Member
                         cellSkills.Text = tab.Rows[0]["Skills"].ToString();
                         row.Controls.Add(cellSkills);
 
-                  
+                        TableCell cell_shortlist = new TableCell();
+                        Button btn_shortlist = new Button();
+                        btn_shortlist.ID = "shortlist~" + tab.Rows[0]["UserId"].ToString();
+                        btn_shortlist.Text = "SHORTLIST";
+                        btn_shortlist.OnClientClick = "return confirm('Are you sure want to SHORLIST this Applicant ?')";
+                        btn_shortlist.Click += new EventHandler(btn_shortlist_Click);
+                        cell_shortlist.Controls.Add(btn_shortlist);
+                        row.Controls.Add(cell_shortlist);
+
                         Table4.Controls.Add(row);
                     }
                 }
@@ -222,7 +235,7 @@ namespace staffingProblemProject.Member
                 TableHeaderCell cell = new TableHeaderCell();
                 cell.ColumnSpan = 5;
                 cell.ForeColor = System.Drawing.Color.Red;
-                cell.Text = "No Users Found!!";
+                cell.Text = "No Applications Received!!";
                 row.Controls.Add(cell);
 
                 Table4.Controls.Add(row);
@@ -233,7 +246,6 @@ namespace staffingProblemProject.Member
         {
             try
             {
-                //throw new NotImplementedException();
                 BLL obj = new BLL();
                 LinkButton btn = (LinkButton)sender;
                 string[] s = btn.ID.Split('~');
@@ -258,7 +270,46 @@ namespace staffingProblemProject.Member
             }
         }
 
-       
+        void btn_shortlist_Click(object sender, EventArgs e)
+        {
+            BLL obj = new BLL();
+            Button lbtn = (Button)sender;
+            string[] s = lbtn.ID.ToString().Split('~');
 
+            try
+            {
+                DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
+                DataTable User = obj.GetUserById(s[1]);
+
+                MailMessage mail = new MailMessage();
+                mail.To.Add(User.Rows[0][5].ToString());
+                mail.From = new MailAddress("onlinenotes56@gmail.com", "Job Portal", System.Text.Encoding.UTF8);
+                mail.Subject = "Shortlisted for Job ID" + Ad.Rows[0][0];
+                mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                mail.Body = "You have been shortlisted for the job you've recently applied. Job Application details are as follows:<br>Job ID " + Ad.Rows[0][0] + "<br> Posted by: " + Ad.Rows[0][1] + "<br> Role:" + Ad.Rows[0][3] + "<br>";
+                mail.BodyEncoding = System.Text.Encoding.UTF8;
+                mail.IsBodyHtml = true;
+                mail.Priority = MailPriority.High;
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new System.Net.NetworkCredential("onlinenotes56@gmail.com", "kwaaisxwvqjwbdnz");
+                client.Port = 587;
+                client.Host = "smtp.gmail.com";
+                client.EnableSsl = true;
+                client.Send(mail);
+                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Applicant Shortlisted and notified!')</script>");
+                
+            }
+            catch (Exception ex)
+            {
+                Exception ex2 = ex;
+                string errorMessage = string.Empty;
+                while (ex2 != null)
+                {
+                    errorMessage += ex2.ToString();
+                    ex2 = ex2.InnerException;
+                }
+                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
+            }
+        }
     }
 }

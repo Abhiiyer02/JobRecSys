@@ -62,11 +62,11 @@ namespace staffingProblemProject.Candidate
                 mainrow.Controls.Add(comp);
 
                 TableHeaderCell cell1 = new TableHeaderCell();
-                cell1.Text = "Job Type";
+                cell1.Text = "Job Domain";
                 mainrow.Controls.Add(cell1);
 
                 TableHeaderCell cell2 = new TableHeaderCell();
-                cell2.Text = "SubType";
+                cell2.Text = "Job Title";
                 mainrow.Controls.Add(cell2);
 
                 TableHeaderCell cell3 = new TableHeaderCell();
@@ -74,11 +74,11 @@ namespace staffingProblemProject.Candidate
                 mainrow.Controls.Add(cell3);
 
                 TableHeaderCell cell4 = new TableHeaderCell();
-                cell4.Text = "Job Desc";
+                cell4.Text = "Job Description";
                 mainrow.Controls.Add(cell4);
 
                 TableHeaderCell cell5 = new TableHeaderCell();
-                cell5.Text = "Posted Date";
+                cell5.Text = "Posted On";
                 mainrow.Controls.Add(cell5);
 
                 TableHeaderCell cellStatus = new TableHeaderCell();
@@ -173,11 +173,9 @@ namespace staffingProblemProject.Candidate
 
         void btn_edit123_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
             BLL obj = new BLL();
             Button lbtn = (Button)sender;
             string[] s = lbtn.ID.ToString().Split('~');
-            
 
             try
             {
@@ -192,7 +190,7 @@ namespace staffingProblemProject.Candidate
                     mail.Subject = "Job Application Submitted for Job ID" + Ad.Rows[0][0];
                     mail.SubjectEncoding = System.Text.Encoding.UTF8;
                     //mail.Body = "your job application for ";
-                    mail.Body = "Your Job Application has been submitted. Job Applicatio details are as follows:<br>Job ID " + Ad.Rows[0][0]+ "<br> Posted by: " + Ad.Rows[0][1]+ "<br> Role:" + Ad.Rows[0][3]+ "<br>&nbsp";
+                    mail.Body = "Your Job Application has been submitted. Job Application details are as follows:<br>Job ID " + Ad.Rows[0][0]+ "<br> Posted by: " + Ad.Rows[0][1]+ "<br> Role:" + Ad.Rows[0][3]+ "<br>";
                     mail.BodyEncoding = System.Text.Encoding.UTF8;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
