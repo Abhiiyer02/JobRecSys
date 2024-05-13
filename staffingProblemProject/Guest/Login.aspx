@@ -34,7 +34,7 @@
             <tr>
                 <td align="center" valign="top" 
                     style="width: 510px;">
-                    <table style="width: 100%; background-image: url('../images/loginbg10.jpg'); height: 302px; bakcground-repeat: no-repeat " 
+                    <table style="width: 100%; background-image: url('../images/loginbg10.jpg'); height: 302px; background-repeat: no-repeat " 
                         align="center">
                         <tr>
                             <td style="width: 368px">

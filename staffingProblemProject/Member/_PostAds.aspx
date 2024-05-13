@@ -101,8 +101,8 @@
                            <strong> Status</strong></td>
                         <td class="style1">
                             <asp:DropDownList ID="ddlStatus" runat="server" Width="250px">
-                                <asp:ListItem>New</asp:ListItem>
-                                <asp:ListItem>Old</asp:ListItem>
+                                <asp:ListItem>Active</asp:ListItem>
+                                <asp:ListItem>Closed</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td class="style1">

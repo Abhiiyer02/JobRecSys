@@ -44,41 +44,7 @@ namespace staffingProblemProject.Member
             if (tabAds.Rows.Count > 0)
             {
                 Table4.Rows.Clear();
-
-                Table4.BorderStyle = BorderStyle.Double;
-                Table4.GridLines = GridLines.Both;
-                Table4.BorderColor = System.Drawing.Color.DarkGray;
-
-                TableRow mainrow = new TableRow();
-                mainrow.Height = 30;
-                mainrow.ForeColor = System.Drawing.Color.WhiteSmoke;
-
-                mainrow.BackColor = System.Drawing.Color.Gray;
-
-                TableHeaderCell cell0 = new TableHeaderCell();
-                cell0.Text = "Resume";
-                mainrow.Controls.Add(cell0);
-
-                TableHeaderCell cell2 = new TableHeaderCell();
-                cell2.Text = "Name";
-                mainrow.Controls.Add(cell2);
-
-                TableHeaderCell cell4 = new TableHeaderCell();
-                cell4.Text = "ContactNo";
-                mainrow.Controls.Add(cell4);
-
-                TableHeaderCell cell5 = new TableHeaderCell();
-                cell5.Text = "Email ID";
-                mainrow.Controls.Add(cell5);
-
-                TableHeaderCell cell51 = new TableHeaderCell();
-                cell51.Text = "Skills";
-                mainrow.Controls.Add(cell51);
-
-               
-
-                Table4.Controls.Add(mainrow);
-
+                
                 ArrayList _arrayUserId = new ArrayList();
                 ArrayList _arrayCnt = new ArrayList();
 
@@ -155,49 +121,97 @@ namespace staffingProblemProject.Member
                     }
                 }
 
-                for (int i = 0; i < arrayRecords.Count; i++)
+                if (arrayRecords.Count > 0) 
                 {
-                    TableRow row = new TableRow();
+                    Table4.BorderStyle = BorderStyle.Double;
+                    Table4.GridLines = GridLines.Both;
+                    Table4.BorderColor = System.Drawing.Color.DarkGray;
 
-                    DataTable tab = new DataTable();
-                    tab = obj.GetUserById(arrayRecords[i].ToString());
+                    TableRow mainrow = new TableRow();
+                    mainrow.Height = 30;
+                    mainrow.ForeColor = System.Drawing.Color.WhiteSmoke;
 
-                    TableCell cellResume = new TableCell();
-                    cellResume.Width = 150;
-                    cellResume.Font.Bold = true;
-                    LinkButton lbtnResume = new LinkButton();
-                    lbtnResume.ID = "res~" + tab.Rows[0]["UserId"].ToString();
-                    lbtnResume.Text = "Download Resume";
-                    lbtnResume.OnClientClick = "return confirm('Are you sure want to Download ?')";
-                    lbtnResume.Click += new EventHandler(lbtnResume_Click);
-                    cellResume.Controls.Add(lbtnResume);
-                    row.Controls.Add(cellResume);
+                    mainrow.BackColor = System.Drawing.Color.Gray;
 
-                    TableCell cellMemberId = new TableCell();
-                    cellMemberId.Width = 100;
-                    cellMemberId.Text = "<a href='#'>" + tab.Rows[0]["Name"].ToString() + "<span>Name : " + tab.Rows[0]["Name"].ToString() + ".</br>Address : " + tab.Rows[0]["Address"].ToString() + ".</br>Email ID : " + tab.Rows[0]["EmailId"].ToString() + "</span></a>";
-                    row.Controls.Add(cellMemberId);
+                    TableHeaderCell cell0 = new TableHeaderCell();
+                    cell0.Text = "Resume";
+                    mainrow.Controls.Add(cell0);
+
+                    TableHeaderCell cell2 = new TableHeaderCell();
+                    cell2.Text = "Name";
+                    mainrow.Controls.Add(cell2);
+
+                    TableHeaderCell cell4 = new TableHeaderCell();
+                    cell4.Text = "ContactNo";
+                    mainrow.Controls.Add(cell4);
+
+                    TableHeaderCell cell5 = new TableHeaderCell();
+                    cell5.Text = "Email ID";
+                    mainrow.Controls.Add(cell5);
+
+                    TableHeaderCell cell51 = new TableHeaderCell();
+                    cell51.Text = "Skills";
+                    mainrow.Controls.Add(cell51);
+
+                    Table4.Controls.Add(mainrow);
+
+                    for (int i = 0; i < arrayRecords.Count; i++)
+                    {
+                        TableRow row = new TableRow();
+
+                        DataTable tab = new DataTable();
+                        tab = obj.GetUserById(arrayRecords[i].ToString());
+
+                        TableCell cellResume = new TableCell();
+                        cellResume.Width = 150;
+                        cellResume.Font.Bold = true;
+                        LinkButton lbtnResume = new LinkButton();
+                        lbtnResume.ID = "res~" + tab.Rows[0]["UserId"].ToString();
+                        lbtnResume.Text = "Download Resume";
+                        lbtnResume.OnClientClick = "return confirm('Are you sure want to Download ?')";
+                        lbtnResume.Click += new EventHandler(lbtnResume_Click);
+                        cellResume.Controls.Add(lbtnResume);
+                        row.Controls.Add(cellResume);
+
+                        TableCell cellMemberId = new TableCell();
+                        cellMemberId.Width = 100;
+                        cellMemberId.Text = "<a href='#'>" + tab.Rows[0]["Name"].ToString() + "<span>Name : " + tab.Rows[0]["Name"].ToString() + ".</br>Address : " + tab.Rows[0]["Address"].ToString() + ".</br>Email ID : " + tab.Rows[0]["EmailId"].ToString() + "</span></a>";
+                        row.Controls.Add(cellMemberId);
 
 
-                    TableCell cellContactNo = new TableCell();
-                    cellContactNo.Width = 100;
-                    cellContactNo.Text = tab.Rows[0]["ContactNo"].ToString();
-                    row.Controls.Add(cellContactNo);
+                        TableCell cellContactNo = new TableCell();
+                        cellContactNo.Width = 100;
+                        cellContactNo.Text = tab.Rows[0]["ContactNo"].ToString();
+                        row.Controls.Add(cellContactNo);
 
-                    TableCell cellEmailId = new TableCell();
-                    cellEmailId.Width = 100;
-                    cellEmailId.Text = tab.Rows[0]["EmailId"].ToString();
-                    row.Controls.Add(cellEmailId);
+                        TableCell cellEmailId = new TableCell();
+                        cellEmailId.Width = 100;
+                        cellEmailId.Text = tab.Rows[0]["EmailId"].ToString();
+                        row.Controls.Add(cellEmailId);
 
-                    TableCell cellSkills = new TableCell();
-                    cellSkills.Width = 550;
-                    cellSkills.Text = tab.Rows[0]["Skills"].ToString();
-                    row.Controls.Add(cellSkills);
+                        TableCell cellSkills = new TableCell();
+                        cellSkills.Width = 550;
+                        cellSkills.Text = tab.Rows[0]["Skills"].ToString();
+                        row.Controls.Add(cellSkills);
 
                   
-                    Table4.Controls.Add(row);
+                        Table4.Controls.Add(row);
+                    }
                 }
 
+                else
+                {
+                    Table4.GridLines = GridLines.None;
+
+                    TableHeaderRow row = new TableHeaderRow();
+                    TableHeaderCell cell = new TableHeaderCell();
+                    cell.ColumnSpan = 5;
+                    cell.ForeColor = System.Drawing.Color.Red;
+                    cell.Text = "No Suitable Applicants with skill-set aligning to the Job!!";
+                    row.Controls.Add(cell);
+
+                    Table4.Controls.Add(row);
+                }
             }
             else
             {
@@ -212,7 +226,6 @@ namespace staffingProblemProject.Member
                 row.Controls.Add(cell);
 
                 Table4.Controls.Add(row);
-
             }
         }
 
