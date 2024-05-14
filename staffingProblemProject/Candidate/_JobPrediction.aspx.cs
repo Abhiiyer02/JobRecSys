@@ -22,6 +22,7 @@ using Accord.Math.Optimization.Losses;
 using Accord.MachineLearning.Bayes;
 using Accord.Statistics.Distributions.Univariate;
 using System.Reflection.Emit;
+using System.Reflection;
 
 namespace staffingProblemProject.Candidate
 {
@@ -98,7 +99,7 @@ namespace staffingProblemProject.Candidate
         protected string NaiveBayes(double[] input)
         {
             // Load and preprocess the dataset
-            var trainInputs = LoadAndPreprocessData("D:\\Job Recc NB APRIORI OG\\staffingProblemProject\\Candidate\\Files\\TestDataNumerical.csv");
+            var trainInputs = LoadAndPreprocessData(Server.MapPath("Files/TrainDataNumerical.csv"));
             string[] domains = { "Web Development", "DevOps", "Data Science", "Networks Engineering", "Cybersecurity", "Software Development", "Software Testing", "UI/UX Development", "Quality and Assurance", "Embedded Systems Development" };
 
             // Assuming the last column is the target variable (domain)

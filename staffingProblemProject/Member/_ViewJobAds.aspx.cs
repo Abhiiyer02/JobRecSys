@@ -179,7 +179,6 @@ namespace staffingProblemProject.Member
 
         void btn_candidates_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
             BLL obj = new BLL();
             Button lbtn = (Button)sender;
             string[] s = lbtn.ID.ToString().Split('~');

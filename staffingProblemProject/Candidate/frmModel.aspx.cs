@@ -539,9 +539,9 @@ namespace staffingProblemProject
         }
         
 
-        double _outcomeCntNB = 0;
-        string _timeNB = null;
-        int _ActualCnt = 0;
+        //double _outcomeCntNB = 0;
+        //string _timeNB = null;
+        //int _ActualCnt = 0;
 
         private void _Results()
         {
@@ -652,8 +652,8 @@ namespace staffingProblemProject
         protected string[][] NaiveBayesRandomForest(string command)
         {
             // Load and preprocess the dataset
-            var trainInputs = LoadAndPreprocessData("D:\\Job Recc NB APRIORI OG\\staffingProblemProject\\Candidate\\Files\\TrainDataNumerical.csv");
-            var testInputs = LoadAndPreprocessData("D:\\Job Recc NB APRIORI OG\\staffingProblemProject\\Candidate\\Files\\TestDataNumerical.csv");
+            var trainInputs = LoadAndPreprocessData(Server.MapPath("Files/TrainDataNumerical.csv"));
+            var testInputs = LoadAndPreprocessData(Server.MapPath("Files/TestDataNumerical.csv"));
             string[] domains = { "Web Development", "DevOps", "Data Science", "Networks Engineering", "Cybersecurity", "Software Development", "Software Testing", "UI/UX Development", "Quality and Assurance", "Embedded Systems Development" };
 
             // Assuming the last column is the target variable (domain)

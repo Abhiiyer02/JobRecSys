@@ -11,7 +11,7 @@ namespace staffingProblemProject.Member
 {
 
 
-    public partial class _AppliedCandidates
+    public partial class _ShortlistedApplicants
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace staffingProblemProject.Member
         protected global::System.Web.UI.WebControls.Panel panelExistingUsers;
 
         /// <summary>
-        /// Table4 control.
+        /// Table5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table4;
-
-        /// <summary>
-        /// btn_shortlists control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_shortlists;
+        protected global::System.Web.UI.WebControls.Table Table5;
     }
 }

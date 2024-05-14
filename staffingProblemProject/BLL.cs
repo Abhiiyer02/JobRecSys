@@ -16,6 +16,8 @@ namespace staffingProblemProject
         tblJobAdsTableAdapter adsObj = new tblJobAdsTableAdapter();
 
         tblApplyJobsTableAdapter applyObj = new tblApplyJobsTableAdapter();
+        tblShortlistsTableAdapter shortlistObj = new tblShortlistsTableAdapter();
+        tblJobOffersTableAdapter jobOfferObj = new tblJobOffersTableAdapter();
 
         #region ----- User Account -----
 
@@ -228,6 +230,11 @@ namespace staffingProblemProject
             applyObj.DeleteApplyJobsByAdsId(AdId);
         }
 
+        public void DeleteJobApplication(string userId, int adId)
+        {
+            applyObj.DeleteJobApplication(userId, adId);
+        }
+
         public DataTable GetAllAds()
         {
             return adsObj.GetData();
@@ -269,6 +276,43 @@ namespace staffingProblemProject
 
             return true;
         }
-          
+
+        public void InsertShortlist(string userId, int adId)
+        {
+            shortlistObj.InsertShortlist(userId, adId);
+        }
+
+        public DataTable GetShortlistsByAdId(int adId)
+        {
+            return shortlistObj.GetShortlistsByAdId(adId);
+        }
+
+        public bool CheckShortlist(string userId, int adId)
+        {
+            int cnt = int.Parse(shortlistObj.CheckShortlist(userId, adId).ToString());
+
+            if (cnt == 1)
+
+                return false;
+
+            return true;
+        }
+
+        public void InsertJobOffer(string userId, int adId)
+        {
+            jobOfferObj.InsertJobOffer(userId, adId);
+        }
+
+        public bool CheckJobOffer(string userId, int adId)
+        {
+            int cnt = int.Parse(jobOfferObj.CheckJobOffer(userId, adId).ToString());
+
+            if (cnt == 1)
+
+                return false;
+
+            return true;
+        }
+
     }
 }

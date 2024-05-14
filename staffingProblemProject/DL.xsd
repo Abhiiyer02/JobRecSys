@@ -50,7 +50,7 @@
               <Mapping SourceColumn="Password" DataSetColumn="Password" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckAdminLogin" Modifier="Public" Name="CheckAdminLogin" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckAdminLogin">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckAdminLogin" Modifier="Public" Name="CheckAdminLogin" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckAdminLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblAdmin where AdminId=@AdminId and Password=@Password</CommandText>
@@ -154,7 +154,7 @@
               <Mapping SourceColumn="ReceiptNumber" DataSetColumn="ReceiptNumber" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckMemberId" Modifier="Public" Name="CheckMemberId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckMemberId">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckMemberId" Modifier="Public" Name="CheckMemberId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckMemberId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblMembers where MemberId=@MemberId</CommandText>
@@ -164,7 +164,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckMemberLogin" Modifier="Public" Name="CheckMemberLogin" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CheckMemberLogin">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckMemberLogin" Modifier="Public" Name="CheckMemberLogin" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CheckMemberLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblMembers where MemberId=@MemberId and Password=@Pwd and Status=@Status</CommandText>
@@ -176,7 +176,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckReceiptNumber" Modifier="Public" Name="CheckReceiptNumber" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CheckReceiptNumber">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckReceiptNumber" Modifier="Public" Name="CheckReceiptNumber" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CheckReceiptNumber">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblMembers where ReceiptNumber=@ReceiptNo</CommandText>
@@ -356,7 +356,7 @@
               <Mapping SourceColumn="RegisteredDate" DataSetColumn="RegisteredDate" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserId" Modifier="Public" Name="CheckUserId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckUserId">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserId" Modifier="Public" Name="CheckUserId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckUserId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblUsers Where UserId=@UserId</CommandText>
@@ -366,7 +366,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserLogin" Modifier="Public" Name="CheckUserLogin" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CheckUserLogin">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserLogin" Modifier="Public" Name="CheckUserLogin" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CheckUserLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblUsers Where UserId=@UserId and Password=@Pwd</CommandText>
@@ -536,7 +536,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllNewAds" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetAllNewAds" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllNewAds" UserSourceName="FillBy2">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="jobportalDB.dbo.tblJobAds" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllNewAds" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetAllNewAds" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllNewAds" UserSourceName="FillBy2">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>Select *from tblJobAds Where Status='Active'</CommandText>
@@ -544,7 +544,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetJobAdsByType" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetJobAdsByType" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetJobAdsByType" UserSourceName="FillBy3">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="jobportalDB.dbo.tblJobAds" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetJobAdsByType" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetJobAdsByType" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetJobAdsByType" UserSourceName="FillBy3">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>Select *from tblJobAds where JobType=@type and Status='Active'</CommandText>
@@ -633,7 +633,7 @@
               <Mapping SourceColumn="AdsId" DataSetColumn="AdsId" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserAd" Modifier="Public" Name="CheckUserAd" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckUserAd">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckUserAd" Modifier="Public" Name="CheckUserAd" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckUserAd">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblApplyJobs Where AdsId=@AdId and UserId=@UserId</CommandText>
@@ -650,6 +650,17 @@
                     <CommandText>DELETE FROM [tblApplyJobs] WHERE AdsId=@AId</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="AId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblApplyJobs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteJobApplication" Modifier="Public" Name="DeleteJobApplication" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteJobApplication">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [tblApplyJobs] WHERE UserId = @UserId AND AdsId = @AdId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="jobportalDB.dbo.tblApplyJobs" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="AdId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblApplyJobs" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
@@ -674,7 +685,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertApplyJob" Modifier="Public" Name="InsertApplyJob" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertApplyJob">
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertApplyJob" Modifier="Public" Name="InsertApplyJob" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertApplyJob">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [tblApplyJobs] ([UserId], [AdsId]) VALUES (@UserId, @AdsId)</CommandText>
@@ -687,25 +698,175 @@
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblShortlistsTableAdapter" GeneratorDataComponentClassName="tblShortlistsTableAdapter" Name="tblShortlists" UserDataComponentName="tblShortlistsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="jobportalDB.dbo.tblShortlists" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tblShortlists] WHERE (([ShortlistId] = @Original_ShortlistId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ShortlistId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShortlistId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tblShortlists] ([ShortlistId], [UserId], [AdsId]) VALUES (@ShortlistId, @UserId, @AdsId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ShortlistId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShortlistId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from tblShortlists</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tblShortlists] SET [ShortlistId] = @ShortlistId, [UserId] = @UserId, [AdsId] = @AdsId WHERE (([ShortlistId] = @Original_ShortlistId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ShortlistId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShortlistId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ShortlistId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ShortlistId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ShortlistId" DataSetColumn="ShortlistId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="AdsId" DataSetColumn="AdsId" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckShortlist" Modifier="Public" Name="CheckShortlist" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CheckShortlist">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM tblShortlists WHERE UserId = @UserId AND AdsId = @AdId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="jobportalDB.dbo.tblShortlists" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="AdId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblShortlists" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="jobportalDB.dbo.tblShortlists" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetShortlistsByAdId" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetShortlistsByAdId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetShortlistsByAdId" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from tblShortlists where AdsId = @AdId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AdId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblShortlists" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertShortlist" Modifier="Public" Name="InsertShortlist" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertShortlist">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [tblShortlists] ([UserId], [AdsId]) VALUES (@UserId, @AdsId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="jobportalDB.dbo.tblShortlists" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="AdsId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblShortlists" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblJobOffersTableAdapter" GeneratorDataComponentClassName="tblJobOffersTableAdapter" Name="tblJobOffers" UserDataComponentName="tblJobOffersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="jobportalDB.dbo.tblJobOffers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tblJobOffers] WHERE (([OfferId] = @Original_OfferId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OfferId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OfferId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tblJobOffers] ([OfferId], [UserId], [AdsId]) VALUES (@OfferId, @UserId, @AdsId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OfferId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OfferId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from tblJobOffers</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tblJobOffers] SET [OfferId] = @OfferId, [UserId] = @UserId, [AdsId] = @AdsId WHERE (([OfferId] = @Original_OfferId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OfferId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OfferId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OfferId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OfferId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfferId" DataSetColumn="OfferId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="AdsId" DataSetColumn="AdsId" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CheckJobOffer" Modifier="Public" Name="CheckJobOffer" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CheckJobOffer">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM tblJobOffers WHERE UserId = @UserId AND AdsId = @AdId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="jobportalDB.dbo.tblJobOffers" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="AdId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblJobOffers" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="replacementDatabaseConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertJobOffer" Modifier="Public" Name="InsertJobOffer" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertJobOffer">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [tblJobOffers] ([UserId], [AdsId]) VALUES (@UserId, @AdsId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="jobportalDB.dbo.tblJobOffers" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="AdsId" ColumnName="AdsId" DataSourceName="jobportalDB.dbo.tblJobOffers" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AdsId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AdsId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DL" msprop:Generator_DataSetName="DL">
+  <xs:element name="DL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DL" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DL">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblAdmin" msprop:Generator_RowEvHandlerName="tblAdminRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAdminRowDeleted" msprop:Generator_RowDeletingName="tblAdminRowDeleting" msprop:Generator_RowEvArgName="tblAdminRowChangeEvent" msprop:Generator_TablePropName="tblAdmin" msprop:Generator_RowChangedName="tblAdminRowChanged" msprop:Generator_RowChangingName="tblAdminRowChanging" msprop:Generator_TableClassName="tblAdminDataTable" msprop:Generator_RowClassName="tblAdminRow" msprop:Generator_TableVarName="tabletblAdmin" msprop:Generator_UserTableName="tblAdmin">
+        <xs:element name="tblAdmin" msprop:Generator_RowEvHandlerName="tblAdminRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAdminRowDeleted" msprop:Generator_RowDeletingName="tblAdminRowDeleting" msprop:Generator_RowEvArgName="tblAdminRowChangeEvent" msprop:Generator_TablePropName="tblAdmin" msprop:Generator_RowChangedName="tblAdminRowChanged" msprop:Generator_UserTableName="tblAdmin" msprop:Generator_RowChangingName="tblAdminRowChanging" msprop:Generator_RowClassName="tblAdminRow" msprop:Generator_TableClassName="tblAdminDataTable" msprop:Generator_TableVarName="tabletblAdmin">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AdminId" msprop:Generator_ColumnPropNameInRow="AdminId" msprop:Generator_ColumnPropNameInTable="AdminIdColumn" msprop:Generator_ColumnVarNameInTable="columnAdminId" msprop:Generator_UserColumnName="AdminId">
+              <xs:element name="AdminId" msprop:Generator_ColumnPropNameInTable="AdminIdColumn" msprop:Generator_ColumnPropNameInRow="AdminId" msprop:Generator_UserColumnName="AdminId" msprop:Generator_ColumnVarNameInTable="columnAdminId">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_UserColumnName="Password" minOccurs="0">
+              <xs:element name="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -715,80 +876,80 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblMembers" msprop:Generator_RowEvHandlerName="tblMembersRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMembersRowDeleted" msprop:Generator_RowDeletingName="tblMembersRowDeleting" msprop:Generator_RowEvArgName="tblMembersRowChangeEvent" msprop:Generator_TablePropName="tblMembers" msprop:Generator_RowChangedName="tblMembersRowChanged" msprop:Generator_RowChangingName="tblMembersRowChanging" msprop:Generator_TableClassName="tblMembersDataTable" msprop:Generator_RowClassName="tblMembersRow" msprop:Generator_TableVarName="tabletblMembers" msprop:Generator_UserTableName="tblMembers">
+        <xs:element name="tblMembers" msprop:Generator_RowEvHandlerName="tblMembersRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMembersRowDeleted" msprop:Generator_RowDeletingName="tblMembersRowDeleting" msprop:Generator_RowEvArgName="tblMembersRowChangeEvent" msprop:Generator_TablePropName="tblMembers" msprop:Generator_RowChangedName="tblMembersRowChanged" msprop:Generator_UserTableName="tblMembers" msprop:Generator_RowChangingName="tblMembersRowChanging" msprop:Generator_RowClassName="tblMembersRow" msprop:Generator_TableClassName="tblMembersDataTable" msprop:Generator_TableVarName="tabletblMembers">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MemberId" msprop:Generator_ColumnPropNameInRow="MemberId" msprop:Generator_ColumnPropNameInTable="MemberIdColumn" msprop:Generator_ColumnVarNameInTable="columnMemberId" msprop:Generator_UserColumnName="MemberId">
+              <xs:element name="MemberId" msprop:Generator_ColumnPropNameInTable="MemberIdColumn" msprop:Generator_ColumnPropNameInRow="MemberId" msprop:Generator_UserColumnName="MemberId" msprop:Generator_ColumnVarNameInTable="columnMemberId">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_UserColumnName="Password" minOccurs="0">
+              <xs:element name="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_UserColumnName="CompanyName" minOccurs="0">
+              <xs:element name="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_UserColumnName="CompanyName" msprop:Generator_ColumnVarNameInTable="columnCompanyName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address" minOccurs="0">
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ContactNo" msprop:Generator_ColumnPropNameInRow="ContactNo" msprop:Generator_ColumnPropNameInTable="ContactNoColumn" msprop:Generator_ColumnVarNameInTable="columnContactNo" msprop:Generator_UserColumnName="ContactNo" minOccurs="0">
+              <xs:element name="ContactNo" msprop:Generator_ColumnPropNameInTable="ContactNoColumn" msprop:Generator_ColumnPropNameInRow="ContactNo" msprop:Generator_UserColumnName="ContactNo" msprop:Generator_ColumnVarNameInTable="columnContactNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EmailId" msprop:Generator_ColumnPropNameInRow="EmailId" msprop:Generator_ColumnPropNameInTable="EmailIdColumn" msprop:Generator_ColumnVarNameInTable="columnEmailId" msprop:Generator_UserColumnName="EmailId" minOccurs="0">
+              <xs:element name="EmailId" msprop:Generator_ColumnPropNameInTable="EmailIdColumn" msprop:Generator_ColumnPropNameInRow="EmailId" msprop:Generator_UserColumnName="EmailId" msprop:Generator_ColumnVarNameInTable="columnEmailId" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CompanyLogo" msprop:Generator_ColumnPropNameInRow="CompanyLogo" msprop:Generator_ColumnPropNameInTable="CompanyLogoColumn" msprop:Generator_ColumnVarNameInTable="columnCompanyLogo" msprop:Generator_UserColumnName="CompanyLogo" minOccurs="0">
+              <xs:element name="CompanyLogo" msprop:Generator_ColumnPropNameInTable="CompanyLogoColumn" msprop:Generator_ColumnPropNameInRow="CompanyLogo" msprop:Generator_UserColumnName="CompanyLogo" msprop:Generator_ColumnVarNameInTable="columnCompanyLogo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RegisteredDate" msprop:Generator_ColumnPropNameInRow="RegisteredDate" msprop:Generator_ColumnPropNameInTable="RegisteredDateColumn" msprop:Generator_ColumnVarNameInTable="columnRegisteredDate" msprop:Generator_UserColumnName="RegisteredDate" minOccurs="0">
+              <xs:element name="RegisteredDate" msprop:Generator_ColumnPropNameInTable="RegisteredDateColumn" msprop:Generator_ColumnPropNameInRow="RegisteredDate" msprop:Generator_UserColumnName="RegisteredDate" msprop:Generator_ColumnVarNameInTable="columnRegisteredDate" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" minOccurs="0">
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ReceiptNumber" msprop:Generator_ColumnPropNameInRow="ReceiptNumber" msprop:Generator_ColumnPropNameInTable="ReceiptNumberColumn" msprop:Generator_ColumnVarNameInTable="columnReceiptNumber" msprop:Generator_UserColumnName="ReceiptNumber" minOccurs="0">
+              <xs:element name="ReceiptNumber" msprop:Generator_ColumnPropNameInTable="ReceiptNumberColumn" msprop:Generator_ColumnPropNameInRow="ReceiptNumber" msprop:Generator_UserColumnName="ReceiptNumber" msprop:Generator_ColumnVarNameInTable="columnReceiptNumber" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -798,66 +959,66 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblUsers" msprop:Generator_RowEvHandlerName="tblUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="tblUsersRowDeleted" msprop:Generator_RowDeletingName="tblUsersRowDeleting" msprop:Generator_RowEvArgName="tblUsersRowChangeEvent" msprop:Generator_TablePropName="tblUsers" msprop:Generator_RowChangedName="tblUsersRowChanged" msprop:Generator_RowChangingName="tblUsersRowChanging" msprop:Generator_TableClassName="tblUsersDataTable" msprop:Generator_RowClassName="tblUsersRow" msprop:Generator_TableVarName="tabletblUsers" msprop:Generator_UserTableName="tblUsers">
+        <xs:element name="tblUsers" msprop:Generator_RowEvHandlerName="tblUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="tblUsersRowDeleted" msprop:Generator_RowDeletingName="tblUsersRowDeleting" msprop:Generator_RowEvArgName="tblUsersRowChangeEvent" msprop:Generator_TablePropName="tblUsers" msprop:Generator_RowChangedName="tblUsersRowChanged" msprop:Generator_UserTableName="tblUsers" msprop:Generator_RowChangingName="tblUsersRowChanging" msprop:Generator_RowClassName="tblUsersRow" msprop:Generator_TableClassName="tblUsersDataTable" msprop:Generator_TableVarName="tabletblUsers">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_UserColumnName="UserId">
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_UserColumnName="Password" minOccurs="0">
+              <xs:element name="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address" minOccurs="0">
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ContactNo" msprop:Generator_ColumnPropNameInRow="ContactNo" msprop:Generator_ColumnPropNameInTable="ContactNoColumn" msprop:Generator_ColumnVarNameInTable="columnContactNo" msprop:Generator_UserColumnName="ContactNo" minOccurs="0">
+              <xs:element name="ContactNo" msprop:Generator_ColumnPropNameInTable="ContactNoColumn" msprop:Generator_ColumnPropNameInRow="ContactNo" msprop:Generator_UserColumnName="ContactNo" msprop:Generator_ColumnVarNameInTable="columnContactNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EmailId" msprop:Generator_ColumnPropNameInRow="EmailId" msprop:Generator_ColumnPropNameInTable="EmailIdColumn" msprop:Generator_ColumnVarNameInTable="columnEmailId" msprop:Generator_UserColumnName="EmailId" minOccurs="0">
+              <xs:element name="EmailId" msprop:Generator_ColumnPropNameInTable="EmailIdColumn" msprop:Generator_ColumnPropNameInRow="EmailId" msprop:Generator_UserColumnName="EmailId" msprop:Generator_ColumnVarNameInTable="columnEmailId" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Resume" msprop:Generator_ColumnPropNameInRow="Resume" msprop:Generator_ColumnPropNameInTable="ResumeColumn" msprop:Generator_ColumnVarNameInTable="columnResume" msprop:Generator_UserColumnName="Resume" minOccurs="0">
+              <xs:element name="Resume" msprop:Generator_ColumnPropNameInTable="ResumeColumn" msprop:Generator_ColumnPropNameInRow="Resume" msprop:Generator_UserColumnName="Resume" msprop:Generator_ColumnVarNameInTable="columnResume" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Skills" msprop:Generator_ColumnPropNameInRow="Skills" msprop:Generator_ColumnPropNameInTable="SkillsColumn" msprop:Generator_ColumnVarNameInTable="columnSkills" msprop:Generator_UserColumnName="Skills" minOccurs="0">
+              <xs:element name="Skills" msprop:Generator_ColumnPropNameInTable="SkillsColumn" msprop:Generator_ColumnPropNameInRow="Skills" msprop:Generator_UserColumnName="Skills" msprop:Generator_ColumnVarNameInTable="columnSkills" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RegisteredDate" msprop:Generator_ColumnPropNameInRow="RegisteredDate" msprop:Generator_ColumnPropNameInTable="RegisteredDateColumn" msprop:Generator_ColumnVarNameInTable="columnRegisteredDate" msprop:Generator_UserColumnName="RegisteredDate" minOccurs="0">
+              <xs:element name="RegisteredDate" msprop:Generator_ColumnPropNameInTable="RegisteredDateColumn" msprop:Generator_ColumnPropNameInRow="RegisteredDate" msprop:Generator_UserColumnName="RegisteredDate" msprop:Generator_ColumnVarNameInTable="columnRegisteredDate" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -867,47 +1028,47 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblJobAds" msprop:Generator_RowEvHandlerName="tblJobAdsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblJobAdsRowDeleted" msprop:Generator_RowDeletingName="tblJobAdsRowDeleting" msprop:Generator_RowEvArgName="tblJobAdsRowChangeEvent" msprop:Generator_TablePropName="tblJobAds" msprop:Generator_RowChangedName="tblJobAdsRowChanged" msprop:Generator_RowChangingName="tblJobAdsRowChanging" msprop:Generator_TableClassName="tblJobAdsDataTable" msprop:Generator_RowClassName="tblJobAdsRow" msprop:Generator_TableVarName="tabletblJobAds" msprop:Generator_UserTableName="tblJobAds">
+        <xs:element name="tblJobAds" msprop:Generator_RowEvHandlerName="tblJobAdsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblJobAdsRowDeleted" msprop:Generator_RowDeletingName="tblJobAdsRowDeleting" msprop:Generator_RowEvArgName="tblJobAdsRowChangeEvent" msprop:Generator_TablePropName="tblJobAds" msprop:Generator_RowChangedName="tblJobAdsRowChanged" msprop:Generator_UserTableName="tblJobAds" msprop:Generator_RowChangingName="tblJobAdsRowChanging" msprop:Generator_RowClassName="tblJobAdsRow" msprop:Generator_TableClassName="tblJobAdsDataTable" msprop:Generator_TableVarName="tabletblJobAds">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AdsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnVarNameInTable="columnAdsId" msprop:Generator_UserColumnName="AdsId" type="xs:int" />
-              <xs:element name="MemberId" msprop:Generator_ColumnPropNameInRow="MemberId" msprop:Generator_ColumnPropNameInTable="MemberIdColumn" msprop:Generator_ColumnVarNameInTable="columnMemberId" msprop:Generator_UserColumnName="MemberId" minOccurs="0">
+              <xs:element name="AdsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_UserColumnName="AdsId" msprop:Generator_ColumnVarNameInTable="columnAdsId" type="xs:int" />
+              <xs:element name="MemberId" msprop:Generator_ColumnPropNameInTable="MemberIdColumn" msprop:Generator_ColumnPropNameInRow="MemberId" msprop:Generator_UserColumnName="MemberId" msprop:Generator_ColumnVarNameInTable="columnMemberId" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="JobType" msprop:Generator_ColumnPropNameInRow="JobType" msprop:Generator_ColumnPropNameInTable="JobTypeColumn" msprop:Generator_ColumnVarNameInTable="columnJobType" msprop:Generator_UserColumnName="JobType" minOccurs="0">
+              <xs:element name="JobType" msprop:Generator_ColumnPropNameInTable="JobTypeColumn" msprop:Generator_ColumnPropNameInRow="JobType" msprop:Generator_UserColumnName="JobType" msprop:Generator_ColumnVarNameInTable="columnJobType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SubType" msprop:Generator_ColumnPropNameInRow="SubType" msprop:Generator_ColumnPropNameInTable="SubTypeColumn" msprop:Generator_ColumnVarNameInTable="columnSubType" msprop:Generator_UserColumnName="SubType" minOccurs="0">
+              <xs:element name="SubType" msprop:Generator_ColumnPropNameInTable="SubTypeColumn" msprop:Generator_ColumnPropNameInRow="SubType" msprop:Generator_UserColumnName="SubType" msprop:Generator_ColumnVarNameInTable="columnSubType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SkillsRequired" msprop:Generator_ColumnPropNameInRow="SkillsRequired" msprop:Generator_ColumnPropNameInTable="SkillsRequiredColumn" msprop:Generator_ColumnVarNameInTable="columnSkillsRequired" msprop:Generator_UserColumnName="SkillsRequired" minOccurs="0">
+              <xs:element name="SkillsRequired" msprop:Generator_ColumnPropNameInTable="SkillsRequiredColumn" msprop:Generator_ColumnPropNameInRow="SkillsRequired" msprop:Generator_UserColumnName="SkillsRequired" msprop:Generator_ColumnVarNameInTable="columnSkillsRequired" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="JobDesc" msprop:Generator_ColumnPropNameInRow="JobDesc" msprop:Generator_ColumnPropNameInTable="JobDescColumn" msprop:Generator_ColumnVarNameInTable="columnJobDesc" msprop:Generator_UserColumnName="JobDesc" minOccurs="0">
+              <xs:element name="JobDesc" msprop:Generator_ColumnPropNameInTable="JobDescColumn" msprop:Generator_ColumnPropNameInRow="JobDesc" msprop:Generator_UserColumnName="JobDesc" msprop:Generator_ColumnVarNameInTable="columnJobDesc" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PostedDate" msprop:Generator_ColumnPropNameInRow="PostedDate" msprop:Generator_ColumnPropNameInTable="PostedDateColumn" msprop:Generator_ColumnVarNameInTable="columnPostedDate" msprop:Generator_UserColumnName="PostedDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" minOccurs="0">
+              <xs:element name="PostedDate" msprop:Generator_ColumnPropNameInTable="PostedDateColumn" msprop:Generator_ColumnPropNameInRow="PostedDate" msprop:Generator_UserColumnName="PostedDate" msprop:Generator_ColumnVarNameInTable="columnPostedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -917,18 +1078,48 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblApplyJobs" msprop:Generator_RowClassName="tblApplyJobsRow" msprop:Generator_RowEvHandlerName="tblApplyJobsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblApplyJobsRowDeleted" msprop:Generator_RowDeletingName="tblApplyJobsRowDeleting" msprop:Generator_RowEvArgName="tblApplyJobsRowChangeEvent" msprop:Generator_TablePropName="tblApplyJobs" msprop:Generator_RowChangedName="tblApplyJobsRowChanged" msprop:Generator_RowChangingName="tblApplyJobsRowChanging" msprop:Generator_TableClassName="tblApplyJobsDataTable" msprop:Generator_UserTableName="tblApplyJobs" msprop:Generator_TableVarName="tabletblApplyJobs">
+        <xs:element name="tblApplyJobs" msprop:Generator_RowEvHandlerName="tblApplyJobsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblApplyJobsRowDeleted" msprop:Generator_RowDeletingName="tblApplyJobsRowDeleting" msprop:Generator_RowEvArgName="tblApplyJobsRowChangeEvent" msprop:Generator_TablePropName="tblApplyJobs" msprop:Generator_RowChangedName="tblApplyJobsRowChanged" msprop:Generator_UserTableName="tblApplyJobs" msprop:Generator_RowChangingName="tblApplyJobsRowChanging" msprop:Generator_RowClassName="tblApplyJobsRow" msprop:Generator_TableClassName="tblApplyJobsDataTable" msprop:Generator_TableVarName="tabletblApplyJobs">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ApplyId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ApplyId" msprop:Generator_ColumnPropNameInTable="ApplyIdColumn" msprop:Generator_ColumnVarNameInTable="columnApplyId" msprop:Generator_UserColumnName="ApplyId" type="xs:int" />
-              <xs:element name="UserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_UserColumnName="UserId" minOccurs="0">
+              <xs:element name="ApplyId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ApplyIdColumn" msprop:Generator_ColumnPropNameInRow="ApplyId" msprop:Generator_UserColumnName="ApplyId" msprop:Generator_ColumnVarNameInTable="columnApplyId" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AdsId" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnVarNameInTable="columnAdsId" msprop:Generator_UserColumnName="AdsId" type="xs:int" minOccurs="0" />
+              <xs:element name="AdsId" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_UserColumnName="AdsId" msprop:Generator_ColumnVarNameInTable="columnAdsId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblShortlists" msprop:Generator_RowEvHandlerName="tblShortlistsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblShortlistsRowDeleted" msprop:Generator_RowDeletingName="tblShortlistsRowDeleting" msprop:Generator_RowEvArgName="tblShortlistsRowChangeEvent" msprop:Generator_TablePropName="tblShortlists" msprop:Generator_RowChangedName="tblShortlistsRowChanged" msprop:Generator_UserTableName="tblShortlists" msprop:Generator_RowChangingName="tblShortlistsRowChanging" msprop:Generator_RowClassName="tblShortlistsRow" msprop:Generator_TableClassName="tblShortlistsDataTable" msprop:Generator_TableVarName="tabletblShortlists">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShortlistId" msprop:Generator_ColumnPropNameInTable="ShortlistIdColumn" msprop:Generator_ColumnPropNameInRow="ShortlistId" msprop:Generator_UserColumnName="ShortlistId" msprop:Generator_ColumnVarNameInTable="columnShortlistId" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdsId" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_UserColumnName="AdsId" msprop:Generator_ColumnVarNameInTable="columnAdsId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblJobOffers" msprop:Generator_RowEvHandlerName="tblJobOffersRowChangeEventHandler" msprop:Generator_RowDeletedName="tblJobOffersRowDeleted" msprop:Generator_RowDeletingName="tblJobOffersRowDeleting" msprop:Generator_RowEvArgName="tblJobOffersRowChangeEvent" msprop:Generator_TablePropName="tblJobOffers" msprop:Generator_RowChangedName="tblJobOffersRowChanged" msprop:Generator_UserTableName="tblJobOffers" msprop:Generator_RowChangingName="tblJobOffersRowChanging" msprop:Generator_RowClassName="tblJobOffersRow" msprop:Generator_TableClassName="tblJobOffersDataTable" msprop:Generator_TableVarName="tabletblJobOffers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfferId" msprop:Generator_ColumnPropNameInTable="OfferIdColumn" msprop:Generator_ColumnPropNameInRow="OfferId" msprop:Generator_UserColumnName="OfferId" msprop:Generator_ColumnVarNameInTable="columnOfferId" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdsId" msprop:Generator_ColumnPropNameInTable="AdsIdColumn" msprop:Generator_ColumnPropNameInRow="AdsId" msprop:Generator_UserColumnName="AdsId" msprop:Generator_ColumnVarNameInTable="columnAdsId" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -954,12 +1145,24 @@
       <xs:selector xpath=".//mstns:tblApplyJobs" />
       <xs:field xpath="mstns:ApplyId" />
     </xs:unique>
+    <xs:unique name="tblShortlists_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblShortlists" />
+      <xs:field xpath="mstns:ShortlistId" />
+    </xs:unique>
+    <xs:unique name="tblJobOffers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblJobOffers" />
+      <xs:field xpath="mstns:OfferId" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_tblJobAds_tblMembers" msdata:parent="tblMembers" msdata:child="tblJobAds" msdata:parentkey="MemberId" msdata:childkey="MemberId" msprop:Generator_UserParentTable="tblMembers" msprop:Generator_UserChildTable="tblJobAds" msprop:Generator_RelationVarName="relationFK_tblJobAds_tblMembers" msprop:Generator_ChildPropName="GettblJobAdsRows" msprop:Generator_ParentPropName="tblMembersRow" msprop:Generator_UserRelationName="FK_tblJobAds_tblMembers" />
-      <msdata:Relationship name="FK_tblApplyJobs_tblJobAds" msdata:parent="tblJobAds" msdata:child="tblApplyJobs" msdata:parentkey="AdsId" msdata:childkey="AdsId" msprop:Generator_ChildPropName="GettblApplyJobsRows" msprop:Generator_UserChildTable="tblApplyJobs" msprop:Generator_RelationVarName="relationFK_tblApplyJobs_tblJobAds" msprop:Generator_UserRelationName="FK_tblApplyJobs_tblJobAds" msprop:Generator_UserParentTable="tblJobAds" msprop:Generator_ParentPropName="tblJobAdsRow" />
-      <msdata:Relationship name="FK_tblApplyJobs_tblUsers" msdata:parent="tblUsers" msdata:child="tblApplyJobs" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_ChildPropName="GettblApplyJobsRows" msprop:Generator_UserChildTable="tblApplyJobs" msprop:Generator_RelationVarName="relationFK_tblApplyJobs_tblUsers" msprop:Generator_UserRelationName="FK_tblApplyJobs_tblUsers" msprop:Generator_UserParentTable="tblUsers" msprop:Generator_ParentPropName="tblUsersRow" />
+      <msdata:Relationship name="FK_tblJobAds_tblMembers" msdata:parent="tblMembers" msdata:child="tblJobAds" msdata:parentkey="MemberId" msdata:childkey="MemberId" msprop:Generator_UserParentTable="tblMembers" msprop:Generator_UserChildTable="tblJobAds" msprop:Generator_RelationVarName="relationFK_tblJobAds_tblMembers" msprop:Generator_ChildPropName="GettblJobAdsRows" msprop:Generator_UserRelationName="FK_tblJobAds_tblMembers" msprop:Generator_ParentPropName="tblMembersRow" />
+      <msdata:Relationship name="FK_tblApplyJobs_tblJobAds" msdata:parent="tblJobAds" msdata:child="tblApplyJobs" msdata:parentkey="AdsId" msdata:childkey="AdsId" msprop:Generator_UserParentTable="tblJobAds" msprop:Generator_UserChildTable="tblApplyJobs" msprop:Generator_RelationVarName="relationFK_tblApplyJobs_tblJobAds" msprop:Generator_ChildPropName="GettblApplyJobsRows" msprop:Generator_ParentPropName="tblJobAdsRow" msprop:Generator_UserRelationName="FK_tblApplyJobs_tblJobAds" />
+      <msdata:Relationship name="FK_tblApplyJobs_tblUsers" msdata:parent="tblUsers" msdata:child="tblApplyJobs" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_UserParentTable="tblUsers" msprop:Generator_UserChildTable="tblApplyJobs" msprop:Generator_RelationVarName="relationFK_tblApplyJobs_tblUsers" msprop:Generator_ChildPropName="GettblApplyJobsRows" msprop:Generator_ParentPropName="tblUsersRow" msprop:Generator_UserRelationName="FK_tblApplyJobs_tblUsers" />
+      <msdata:Relationship name="FK_tblShortlists_tblJobAds" msdata:parent="tblJobAds" msdata:child="tblShortlists" msdata:parentkey="AdsId" msdata:childkey="AdsId" msprop:Generator_UserParentTable="tblJobAds" msprop:Generator_UserChildTable="tblShortlists" msprop:Generator_RelationVarName="relationFK_tblShortlists_tblJobAds" msprop:Generator_ChildPropName="GettblShortlistsRows" msprop:Generator_ParentPropName="tblJobAdsRow" msprop:Generator_UserRelationName="FK_tblShortlists_tblJobAds" />
+      <msdata:Relationship name="FK_tblShortlists_tblUsers" msdata:parent="tblUsers" msdata:child="tblShortlists" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_UserParentTable="tblUsers" msprop:Generator_UserChildTable="tblShortlists" msprop:Generator_RelationVarName="relationFK_tblShortlists_tblUsers" msprop:Generator_ChildPropName="GettblShortlistsRows" msprop:Generator_ParentPropName="tblUsersRow" msprop:Generator_UserRelationName="FK_tblShortlists_tblUsers" />
+      <msdata:Relationship name="FK_tblJobOffers_tblJobAds" msdata:parent="tblJobAds" msdata:child="tblJobOffers" msdata:parentkey="AdsId" msdata:childkey="AdsId" msprop:Generator_UserParentTable="tblJobAds" msprop:Generator_UserChildTable="tblJobOffers" msprop:Generator_RelationVarName="relationFK_tblJobOffers_tblJobAds" msprop:Generator_ChildPropName="GettblJobOffersRows" msprop:Generator_ParentPropName="tblJobAdsRow" msprop:Generator_UserRelationName="FK_tblJobOffers_tblJobAds" />
+      <msdata:Relationship name="FK_tblJobOffers_tblUsers" msdata:parent="tblUsers" msdata:child="tblJobOffers" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_UserParentTable="tblUsers" msprop:Generator_UserChildTable="tblJobOffers" msprop:Generator_RelationVarName="relationFK_tblJobOffers_tblUsers" msprop:Generator_ChildPropName="GettblJobOffersRows" msprop:Generator_ParentPropName="tblUsersRow" msprop:Generator_UserRelationName="FK_tblJobOffers_tblUsers" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -1,16 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Collections;
-using System.Net.Mail;
 
 namespace staffingProblemProject.Member
 {
-    public partial class _AppliedCandidates : System.Web.UI.Page
+    public partial class _ShortlistedApplicants : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace staffingProblemProject.Member
                 }
                 else
                 {
-                    GetAppliedUsers();
+                    GetShortlistedUsers();
                 }
             }
             catch
@@ -32,20 +32,18 @@ namespace staffingProblemProject.Member
             }
         }
 
-
-        //function to load the users
-        public void GetAppliedUsers()
+        public void GetShortlistedUsers()
         {
             BLL obj = new BLL();
 
             DataTable tabAds = new DataTable();
             tabAds.Rows.Clear();
-            tabAds = obj.GetCandidatesByAdId(int.Parse(Request.QueryString["adId"].ToString()));
+            tabAds = obj.GetShortlistsByAdId(int.Parse(Request.QueryString["adId"].ToString()));
 
             if (tabAds.Rows.Count > 0)
             {
-                Table4.Rows.Clear();
-                
+                Table5.Rows.Clear();
+
                 ArrayList _arrayUserId = new ArrayList();
                 ArrayList _arrayCnt = new ArrayList();
 
@@ -122,11 +120,11 @@ namespace staffingProblemProject.Member
                     }
                 }
 
-                if (arrayRecords.Count > 0) 
+                if (arrayRecords.Count > 0)
                 {
-                    Table4.BorderStyle = BorderStyle.Double;
-                    Table4.GridLines = GridLines.Both;
-                    Table4.BorderColor = System.Drawing.Color.DarkGray;
+                    Table5.BorderStyle = BorderStyle.Double;
+                    Table5.GridLines = GridLines.Both;
+                    Table5.BorderColor = System.Drawing.Color.DarkGray;
 
                     TableRow mainrow = new TableRow();
                     mainrow.Height = 30;
@@ -155,10 +153,10 @@ namespace staffingProblemProject.Member
                     mainrow.Controls.Add(cell6);
 
                     TableHeaderCell cell7 = new TableHeaderCell();
-                    cell7.Text = "Shortlist";
+                    cell7.Text = "Offer Job";
                     mainrow.Controls.Add(cell7);
 
-                    Table4.Controls.Add(mainrow);
+                    Table5.Controls.Add(mainrow);
 
                     for (int i = 0; i < arrayRecords.Count; i++)
                     {
@@ -201,44 +199,40 @@ namespace staffingProblemProject.Member
 
                         TableCell cell_shortlist = new TableCell();
                         Button btn_shortlist = new Button();
-                        btn_shortlist.ID = "shortlist~" + tab.Rows[0]["UserId"].ToString();
-                        btn_shortlist.Text = "SHORTLIST";
-                        btn_shortlist.OnClientClick = "return confirm('Are you sure want to SHORLIST this Applicant ?')";
-                        btn_shortlist.Click += new EventHandler(btn_shortlist_Click);
+                        btn_shortlist.ID = "offer~" + tab.Rows[0]["UserId"].ToString();
+
+                        if (obj.CheckJobOffer(tab.Rows[0]["UserId"].ToString(), int.Parse(Request.QueryString["adId"].ToString())))
+                        {
+                            btn_shortlist.Text = "OFFER JOB";
+                            btn_shortlist.OnClientClick = "return confirm('Are you sure want to send a JOB OFFER to this Applicant ?')";
+                        }
+                        else
+                        {
+                            btn_shortlist.Text = "JOB OFFERED";
+                            btn_shortlist.BackColor = System.Drawing.Color.Lime;
+                        }
+
+                        btn_shortlist.Click += new EventHandler(btn_offerJob_Click);
                         cell_shortlist.Controls.Add(btn_shortlist);
                         row.Controls.Add(cell_shortlist);
 
-                        Table4.Controls.Add(row);
+                        Table5.Controls.Add(row);
                     }
-                }
-
-                else
-                {
-                    Table4.GridLines = GridLines.None;
-
-                    TableHeaderRow row = new TableHeaderRow();
-                    TableHeaderCell cell = new TableHeaderCell();
-                    cell.ColumnSpan = 5;
-                    cell.ForeColor = System.Drawing.Color.Red;
-                    cell.Text = "No Suitable Applicants with skill-set aligning to the Job!!";
-                    row.Controls.Add(cell);
-
-                    Table4.Controls.Add(row);
                 }
             }
             else
             {
-                Table4.Rows.Clear();
-                Table4.GridLines = GridLines.None;
+                Table5.Rows.Clear();
+                Table5.GridLines = GridLines.None;
 
                 TableHeaderRow row = new TableHeaderRow();
                 TableHeaderCell cell = new TableHeaderCell();
                 cell.ColumnSpan = 5;
                 cell.ForeColor = System.Drawing.Color.Red;
-                cell.Text = "No New Applications Received!!";
+                cell.Text = "Shortlist Applicants to initiate hiring...";
                 row.Controls.Add(cell);
 
-                Table4.Controls.Add(row);
+                Table5.Controls.Add(row);
             }
         }
 
@@ -270,7 +264,7 @@ namespace staffingProblemProject.Member
             }
         }
 
-        void btn_shortlist_Click(object sender, EventArgs e)
+        void btn_offerJob_Click(object sender, EventArgs e)
         {
             BLL obj = new BLL();
             Button lbtn = (Button)sender;
@@ -278,19 +272,21 @@ namespace staffingProblemProject.Member
 
             try
             {
-                if (obj.CheckShortlist(s[1], int.Parse(Request.QueryString["adId"].ToString()))) 
+                if (obj.CheckJobOffer(s[1], int.Parse(Request.QueryString["adId"].ToString())))
                 {
                     DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
                     DataTable User = obj.GetUserById(s[1]);
-                    obj.InsertShortlist(s[1], int.Parse(Request.QueryString["adId"].ToString()));
-                    obj.DeleteJobApplication(s[1], int.Parse(Request.QueryString["adId"].ToString()));
-                    
+                    obj.InsertJobOffer(s[1], int.Parse(Request.QueryString["adId"].ToString()));
+
+                    // TODO: Add code for updating the dataset (DYNAMIC DATASET for ML Decisions)
+
                     MailMessage mail = new MailMessage();
                     mail.To.Add(User.Rows[0][5].ToString());
                     mail.From = new MailAddress("onlinenotes56@gmail.com", "Job Portal", System.Text.Encoding.UTF8);
-                    mail.Subject = "Shortlisted for Job ID" + Ad.Rows[0][0];
+                    mail.Subject = "Job Offer for Job ID" + Ad.Rows[0][0];
                     mail.SubjectEncoding = System.Text.Encoding.UTF8;
-                    mail.Body = "You have been shortlisted for the job you've recently applied. Job Application details are as follows:<br>Job ID " + Ad.Rows[0][0] + "<br> Posted by: " + Ad.Rows[0][1] + "<br> Role:" + Ad.Rows[0][3] + "<br>";
+                    mail.Body = "<h3> Congratulations " + User.Rows[0]["Name"] + " !!!</h3>" + "Happy News! <strong>" + Ad.Rows[0][1] + "</strong> " + "has offered you their latest opening/position as <strong>" + Ad.Rows[0][3] + "</strong>" +
+                    "<br>Job Application details are as follows:<br>Job ID " + Ad.Rows[0][0] + "<br> Posted by: " + Ad.Rows[0][1] + "<br> Role:" + Ad.Rows[0][3] + "<br>";
                     mail.BodyEncoding = System.Text.Encoding.UTF8;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
@@ -300,12 +296,12 @@ namespace staffingProblemProject.Member
                     client.Host = "smtp.gmail.com";
                     client.EnableSsl = true;
                     client.Send(mail);
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Applicant Shortlisted and notified!')</script>");
-                    GetAppliedUsers();
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Job Offer mail sent successfully!')</script>");
+                    GetShortlistedUsers();
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Applicant has already been shortlisted!')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Job has already been Offered to this Applicant!')</script>");
                 }
             }
             catch (Exception ex)
@@ -318,20 +314,6 @@ namespace staffingProblemProject.Member
                     ex2 = ex2.InnerException;
                 }
                 ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
-            }
-        }
-
-        protected void btn_shortlists_Click(object sender, EventArgs e)
-        {
-            BLL obj = new BLL();
-
-            try
-            {
-                Response.Redirect(string.Format("_ShortlistedApplicants.aspx?adId={0}", Request.QueryString["adId"].ToString()));
-            }
-            catch
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Server Error!!!')</script>");
             }
         }
     }
