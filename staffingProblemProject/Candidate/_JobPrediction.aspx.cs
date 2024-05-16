@@ -23,12 +23,13 @@ using Accord.MachineLearning.Bayes;
 using Accord.Statistics.Distributions.Univariate;
 using System.Reflection.Emit;
 using System.Reflection;
+using System.Net.Mail;
 
 namespace staffingProblemProject.Candidate
 {
     public partial class _JobPrediction : System.Web.UI.Page
     {
-
+        string _output = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -40,9 +41,14 @@ namespace staffingProblemProject.Candidate
                 }
                 else
                 {
-                    //System.Diagnostics.Debug.WriteLine("Hello");
                     //TrainingDS();
                     jobstxt.Visible = false;
+                    ResultAnnouncement.Visible = false;
+                    if (lblResult.Text != "")
+                    {
+                        ResultAnnouncement.Visible = true;
+                        GetCompanyAds(lblResult.Text);
+                    }
                 }
             }
             catch
@@ -79,12 +85,13 @@ namespace staffingProblemProject.Candidate
 
                 double[] values = _data.Split(',').Select(double.Parse).ToArray();
 
-                string _output = NaiveBayes(values);
+                _output = NaiveBayes(values);
 
                 lblResult.ForeColor = System.Drawing.Color.Green;
                 lblResult.Font.Bold = true;
                 lblResult.Font.Size = 16;
-                lblResult.Text = "Result: " + _output;
+                ResultAnnouncement.Visible = true;
+                lblResult.Text = _output;
 
 
                 //Response.Redirect(string.Format("StudentGraph.aspx?p1={0}", _output));
@@ -148,9 +155,9 @@ namespace staffingProblemProject.Candidate
 
             // Predict the domain of the new job
             int predictedDomain = model.Decide(input);
-            string _output = domains[predictedDomain];
+            string output = domains[predictedDomain];
 
-            return _output;
+            return output;
         }
 
         protected double[][] LoadAndPreprocessData(string filePath)
@@ -199,11 +206,11 @@ namespace staffingProblemProject.Candidate
                 mainrow.Controls.Add(comp);
 
                 TableHeaderCell cell1 = new TableHeaderCell();
-                cell1.Text = "Job Type";
+                cell1.Text = "Job Domain";
                 mainrow.Controls.Add(cell1);
 
                 TableHeaderCell cell2 = new TableHeaderCell();
-                cell2.Text = "SubType";
+                cell2.Text = "Job Title";
                 mainrow.Controls.Add(cell2);
 
                 TableHeaderCell cell3 = new TableHeaderCell();
@@ -211,11 +218,11 @@ namespace staffingProblemProject.Candidate
                 mainrow.Controls.Add(cell3);
 
                 TableHeaderCell cell4 = new TableHeaderCell();
-                cell4.Text = "Job Desc";
+                cell4.Text = "Job Description";
                 mainrow.Controls.Add(cell4);
 
                 TableHeaderCell cell5 = new TableHeaderCell();
-                cell5.Text = "Posted Date";
+                cell5.Text = "Posted On";
                 mainrow.Controls.Add(cell5);
 
                 TableHeaderCell cellStatus = new TableHeaderCell();
@@ -301,33 +308,55 @@ namespace staffingProblemProject.Candidate
                 row.Controls.Add(cell);
 
                 Table4.Controls.Add(row);
-
             }
         }
 
         void btn_edit123_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
             BLL obj = new BLL();
             Button lbtn = (Button)sender;
             string[] s = lbtn.ID.ToString().Split('~');
-
 
             try
             {
                 if (obj.CheckUserAd(Session["UserId"].ToString(), int.Parse(s[1])))
                 {
+                    DataTable Ad = obj.GetAdsById(int.Parse(s[1]));
+                    DataTable User = obj.GetUserById(Session["UserId"].ToString());
                     obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]));
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Job Applied Successfully')</script>");
+                    MailMessage mail = new MailMessage();
+                    mail.To.Add(User.Rows[0][5].ToString());
+                    mail.From = new MailAddress("onlinenotes56@gmail.com", "Job Portal", System.Text.Encoding.UTF8);
+                    mail.Subject = "Job Application Submitted for Job ID" + Ad.Rows[0][0];
+                    mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                    //mail.Body = "your job application for ";
+                    mail.Body = "Your Job Application has been submitted. Job Application details are as follows:<br>Job ID " + Ad.Rows[0][0] + "<br> Posted by: " + Ad.Rows[0][1] + "<br> Role:" + Ad.Rows[0][3] + "<br>";
+                    mail.BodyEncoding = System.Text.Encoding.UTF8;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    SmtpClient client = new SmtpClient();
+                    client.Credentials = new System.Net.NetworkCredential("onlinenotes56@gmail.com", "kwaaisxwvqjwbdnz");
+                    client.Port = 587;
+                    client.Host = "smtp.gmail.com";
+                    client.EnableSsl = true;
+                    client.Send(mail);
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Job Applied Successfully')</script>");
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Already Applied')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Already Applied')</script>");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Server Error!!!')</script>");
+                Exception ex2 = ex;
+                string errorMessage = string.Empty;
+                while (ex2 != null)
+                {
+                    errorMessage += ex2.ToString();
+                    ex2 = ex2.InnerException;
+                }
+                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
             }
         }
     }

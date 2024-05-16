@@ -4855,12 +4855,11 @@ namespace staffingProblemProject.DLTableAdapters {
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MemberId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MemberId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "UPDATE [tblMembers] SET [MemberId] = @MemberId, [Password] = @Password, [Name] = " +
-                "@Name, [CompanyName] = @CompanyName, [Address] = @Address, [ContactNo] = @Contac" +
-                "tNo, [EmailId] = @EmailId WHERE (([MemberId] = @Original_MemberId))";
+            this._commandCollection[10].CommandText = "UPDATE [tblMembers] SET [MemberId] = @MemberId, [Name] = @Name, [CompanyName] = @" +
+                "CompanyName, [Address] = @Address, [ContactNo] = @ContactNo, [EmailId] = @EmailI" +
+                "d WHERE (([MemberId] = @Original_MemberId))";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MemberId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MemberId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5331,7 +5330,7 @@ namespace staffingProblemProject.DLTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateMProfile(string MemberId, string Password, string Name, string CompanyName, string Address, string ContactNo, string EmailId, string Original_MemberId) {
+        public virtual int UpdateMProfile(string MemberId, string Name, string CompanyName, string Address, string ContactNo, string EmailId, string Original_MemberId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             if ((MemberId == null)) {
                 throw new global::System.ArgumentNullException("MemberId");
@@ -5339,47 +5338,41 @@ namespace staffingProblemProject.DLTableAdapters {
             else {
                 command.Parameters[0].Value = ((string)(MemberId));
             }
-            if ((Password == null)) {
+            if ((Name == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((string)(Password));
+                command.Parameters[1].Value = ((string)(Name));
             }
-            if ((Name == null)) {
+            if ((CompanyName == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(Name));
+                command.Parameters[2].Value = ((string)(CompanyName));
             }
-            if ((CompanyName == null)) {
+            if ((Address == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(CompanyName));
+                command.Parameters[3].Value = ((string)(Address));
             }
-            if ((Address == null)) {
+            if ((ContactNo == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[4].Value = ((string)(Address));
+                command.Parameters[4].Value = ((string)(ContactNo));
             }
-            if ((ContactNo == null)) {
+            if ((EmailId == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(ContactNo));
-            }
-            if ((EmailId == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[6].Value = ((string)(EmailId));
+                command.Parameters[5].Value = ((string)(EmailId));
             }
             if ((Original_MemberId == null)) {
                 throw new global::System.ArgumentNullException("Original_MemberId");
             }
             else {
-                command.Parameters[7].Value = ((string)(Original_MemberId));
+                command.Parameters[6].Value = ((string)(Original_MemberId));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5661,10 +5654,11 @@ namespace staffingProblemProject.DLTableAdapters {
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE [tblUsers] SET [UserId] = @UserId,  [Password] = @pwd,[Name] = @Name, [Address] = @Address, [ContactNo] = @ContactNo, [EmailId] = @EmailId, [Resume] = @Resume, [Skills] = @Skills, [RegisteredDate] = @RegisteredDate WHERE (([UserId] = @Original_UserId))";
+            this._commandCollection[7].CommandText = "UPDATE [tblUsers] SET [UserId] = @UserId, [Name] = @Name, [Address] = @Address, [" +
+                "ContactNo] = @ContactNo, [EmailId] = @EmailId, [Resume] = @Resume, [Skills] = @S" +
+                "kills, [RegisteredDate] = @RegisteredDate WHERE (([UserId] = @Original_UserId))";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pwd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContactNo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ContactNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6174,7 +6168,7 @@ namespace staffingProblemProject.DLTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateUser(string UserId, string pwd, string Name, string Address, string ContactNo, string EmailId, string Resume, string Skills, string RegisteredDate, string Original_UserId) {
+        public virtual int UpdateUser(string UserId, string Name, string Address, string ContactNo, string EmailId, string Resume, string Skills, string RegisteredDate, string Original_UserId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((UserId == null)) {
                 throw new global::System.ArgumentNullException("UserId");
@@ -6182,59 +6176,53 @@ namespace staffingProblemProject.DLTableAdapters {
             else {
                 command.Parameters[0].Value = ((string)(UserId));
             }
-            if ((pwd == null)) {
+            if ((Name == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((string)(pwd));
+                command.Parameters[1].Value = ((string)(Name));
             }
-            if ((Name == null)) {
+            if ((Address == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(Name));
+                command.Parameters[2].Value = ((string)(Address));
             }
-            if ((Address == null)) {
+            if ((ContactNo == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(Address));
+                command.Parameters[3].Value = ((string)(ContactNo));
             }
-            if ((ContactNo == null)) {
+            if ((EmailId == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[4].Value = ((string)(ContactNo));
+                command.Parameters[4].Value = ((string)(EmailId));
             }
-            if ((EmailId == null)) {
+            if ((Resume == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(EmailId));
+                command.Parameters[5].Value = ((string)(Resume));
             }
-            if ((Resume == null)) {
+            if ((Skills == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(Resume));
+                command.Parameters[6].Value = ((string)(Skills));
             }
-            if ((Skills == null)) {
+            if ((RegisteredDate == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(Skills));
-            }
-            if ((RegisteredDate == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(RegisteredDate));
+                command.Parameters[7].Value = ((string)(RegisteredDate));
             }
             if ((Original_UserId == null)) {
                 throw new global::System.ArgumentNullException("Original_UserId");
             }
             else {
-                command.Parameters[9].Value = ((string)(Original_UserId));
+                command.Parameters[8].Value = ((string)(Original_UserId));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -47,13 +47,10 @@ namespace staffingProblemProject.Member
             {
                 BLL obj = new BLL();
 
-                obj.UpdateMProfile(txtUserId.Text, txtNewpassword.Text, txtName.Text, txtCName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, Session["MemberId"].ToString());
+                obj.UpdateMProfile(txtUserId.Text, txtName.Text, txtCName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, Session["MemberId"].ToString());
 
                 ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Profile Updated Successfull')</script>");
                 txtAddress.Text = txtEmailId.Text = txtName.Text = txtPhone.Text = txtCName.Text = string.Empty;
-
-
-
 
                 GetMember();
 
@@ -61,6 +58,46 @@ namespace staffingProblemProject.Member
             catch
             {
 
+            }
+        }
+
+        protected void imgbtnChangepwd_Click(object sender, ImageClickEventArgs e)
+        {
+            DataTable tab = new DataTable();
+            BLL obj = new BLL();
+            tab.Rows.Clear();
+
+            tab = obj.GetMemberById(Session["MemberId"].ToString());
+            string oldPassword = tab.Rows[0]["Password"].ToString();
+
+            if (txtOldpassword.Text.Equals(oldPassword))
+            {
+                try
+                {
+                    obj.UpdateMemberPassword(txtNewpassword.Text, Session["MemberId"].ToString());
+
+                    lblPasswordSuccess.Font.Bold = true;
+                    lblPasswordError.Text = " ";
+                    lblPasswordSuccess.ForeColor = System.Drawing.Color.Green;
+                    lblPasswordSuccess.Text = "<b>Error:</b>Member Password changed successfully!!!";
+                    ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('Member Password changed successfully')</script>");
+                }
+                catch
+                {
+                    lblPasswordError.Font.Bold = true;
+                    lblPasswordSuccess.Text = " ";
+                    lblPasswordError.ForeColor = System.Drawing.Color.Red;
+                    lblPasswordError.Text = "<b>Error:</b> Server Error!!!";
+                    ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('Server Error!')</script>");
+                }
+            }
+            else
+            {
+                lblPasswordError.Font.Bold = true;
+                lblPasswordSuccess.Text = " ";
+                lblPasswordError.ForeColor = System.Drawing.Color.Red;
+                lblPasswordError.Text = "<b>Error:</b>Member Old password incorrect!!!";
+                ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('Member Old password incorrect')</script>");
             }
         }
     }

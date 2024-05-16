@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Candidate/CandidateMP.Master" AutoEventWireup="true" CodeBehind="_JobPrediction.aspx.cs" Inherits="staffingProblemProject.Candidate._JobPrediction" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 32px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,12 +22,10 @@
                 
               <a href="#">
                 <h4 class="sec-head">Applicant's Parameters</h4>
-              <p class="sec-head">
                   <table style="width: 95%;">
                       <tr>
                           <td>
-                              <p>
-                                  SSLC</p>
+                              <p> SSLC</p>
                           </td>
                           <td>
                               <asp:DropDownList ID="DropDownListSSLC" runat="server">
@@ -98,10 +101,7 @@
                               &nbsp;</td>
                           <td>
                               &nbsp;</td>
-                          <td>
-                             
-                                  Operating Systems
-                              </a></td>
+                          <td>Operating Systems</td>
                           <td>
                               <a href="#">
                               <asp:DropDownList ID="DropDownListOS" runat="server">
@@ -130,11 +130,7 @@
                               &nbsp;</td>
                           <td>
                               &nbsp;</td>
-                          <td>
-                            
-                             
-                                  Cloud Computing 
-                              </a></td>
+                          <td>Cloud Computing</td>
                           <td>
                               
                               <asp:DropDownList ID="DropDownListCloud" runat="server">
@@ -143,7 +139,6 @@
                                   <asp:ListItem Value="3">Advanced</asp:ListItem>
                                    <asp:ListItem Value="4">Expert</asp:ListItem>
                               </asp:DropDownList>
-                              </a>
                           </td>
                       </tr>
                       <tr>
@@ -264,9 +259,9 @@
                           </td>
                       </tr>
                       <tr>
-                          <td>
+                          <td class="auto-style1">
                               Java</td>
-                          <td>
+                          <td class="auto-style1">
                               <a href="#">
                               <asp:DropDownList ID="DropDownListJava" runat="server">
                                   <asp:ListItem Value="1">Beginner </asp:ListItem>
@@ -276,14 +271,14 @@
                               </asp:DropDownList>
                               </a>
                           </td>
-                          <td>
-                              &nbsp;</td>
-                          <td>
-                              &nbsp;</td>
-                          <td>
-                              &nbsp;</td>
-                          <td>
-                              &nbsp;</td>
+                          <td class="auto-style1">
+                              </td>
+                          <td class="auto-style1">
+                              </td>
+                          <td class="auto-style1">
+                              </td>
+                          <td class="auto-style1">
+                              </td>
                       </tr>
                       <tr>
                           <td>
@@ -322,14 +317,21 @@
                  <div>
                 
                     <br />
-                     <asp:Label ID="lblResult" runat="server"></asp:Label>
+                     <br />
+                     <br />
+                     <br />
+                     <br />
+                     <br />
+                     <br />
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="ResultAnnouncement" runat="server"><h5 class="sec-head" style="display:inline">Your Predicted Domain is </h5></asp:Label>
+                     &nbsp;<asp:Label ID="lblResult" runat="server" Font-Names="poppins"></asp:Label>
                
                 </div>
         </div>
       <br />
       <br />
           <div>
-              <div id="jobstxt" class="row">
+              <div class="row">
                   <asp:Label runat="server" ID="jobstxt"><h3 class="sec-head">Here are a few jobs related to your predicted domain...</h3></asp:Label>
               </div>
               <br />

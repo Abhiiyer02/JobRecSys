@@ -51,7 +51,7 @@ namespace staffingProblemProject.Candidate
 
                     tabUser = obj.GetUserById(Session["UserId"].ToString());
                     
-                    obj.UpdateUser(txtUserId.Text, tabUser.Rows[0]["Password"].ToString(), txtName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, tabUser.Rows[0]["Resume"].ToString(), txtSkills.Text, DateTime.Now.ToShortDateString());
+                    obj.UpdateUser(txtUserId.Text, txtName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, tabUser.Rows[0]["Resume"].ToString(), txtSkills.Text, DateTime.Now.ToShortDateString());
                                        
                     ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Profile Updated Successfull')</script>");
                     txtAddress.Text = txtEmailId.Text = txtName.Text = txtPhone.Text = txtSkills.Text = string.Empty;
@@ -74,7 +74,7 @@ namespace staffingProblemProject.Candidate
                     string dbPath = @"/Guest/Resumes/" + txtUserId.Text + "." + ext;
 
                   
-                      obj.UpdateUser(txtUserId.Text, tabUser.Rows[0]["Password"].ToString(), txtName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, dbPath, txtSkills.Text, DateTime.Now.ToShortDateString());
+                    obj.UpdateUser(txtUserId.Text, txtName.Text, txtAddress.Text, txtPhone.Text, txtEmailId.Text, dbPath, txtSkills.Text, DateTime.Now.ToShortDateString());
 
                    
                     ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Profile Updated Successfully with Resume')</script>");

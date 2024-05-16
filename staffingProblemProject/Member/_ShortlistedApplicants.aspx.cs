@@ -209,7 +209,8 @@ namespace staffingProblemProject.Member
                         else
                         {
                             btn_shortlist.Text = "JOB OFFERED";
-                            btn_shortlist.BackColor = System.Drawing.Color.Lime;
+                            btn_shortlist.BackColor = System.Drawing.Color.LimeGreen;
+                            btn_shortlist.ForeColor = System.Drawing.Color.White;
                         }
 
                         btn_shortlist.Click += new EventHandler(btn_offerJob_Click);

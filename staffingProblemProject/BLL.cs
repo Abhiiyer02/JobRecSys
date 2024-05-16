@@ -107,9 +107,9 @@ namespace staffingProblemProject
         }
 
         //function to update member profile
-        public void UpdateMProfile(string Id, string pwd, string name,string cname, string address, string contactNo, string emailId, string memberId)
+        public void UpdateMProfile(string Id, string name,string cname, string address, string contactNo, string emailId, string memberId)
         {
-            memberObj.UpdateMProfile(Id, pwd, name, cname, address, contactNo, emailId, memberId);
+            memberObj.UpdateMProfile(Id, name, cname, address, contactNo, emailId, memberId);
         }
 
         #endregion
@@ -143,9 +143,9 @@ namespace staffingProblemProject
             userObj.NewUser(userId,password, name, address, mobile, emailId, resume, skills, date);
         }
 
-        public void UpdateUser(string userId, string password, string name, string address, string mobile, string emailId, string resume, string skills, string date)
+        public void UpdateUser(string userId, string name, string address, string mobile, string emailId, string resume, string skills, string date)
         {
-            userObj.UpdateUser(userId, password, name, address, mobile, emailId, resume, skills, date, userId);
+            userObj.UpdateUser(userId, name, address, mobile, emailId, resume, skills, date, userId);
         }
 
         //function to fetch all users

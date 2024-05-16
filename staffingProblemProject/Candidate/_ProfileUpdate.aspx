@@ -7,7 +7,7 @@
   <div class="container">
 
         <div class="section-title">
-         <h2>UPDATE YOUR PROFILE</h2>
+         <h2>MY PROFILE</h2>
         </div>
 
         <div class="row">
@@ -162,7 +162,7 @@
     <div class="container">
 
       <div class="section-title">
-         <h2><span>CHANGE </span> PASSWORD !</h2>
+         <h2><span>CHANGE </span> PASSWORD</h2>
       </div>
 
       <div class="row">

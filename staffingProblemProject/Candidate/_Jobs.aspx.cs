@@ -184,7 +184,7 @@ namespace staffingProblemProject.Candidate
                     DataTable Ad = obj.GetAdsById(int.Parse(s[1]));
                     DataTable User = obj.GetUserById(Session["UserId"].ToString());
                     obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]));
-                    System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+                    MailMessage mail = new MailMessage();
                     mail.To.Add(User.Rows[0][5].ToString());
                     mail.From = new MailAddress("onlinenotes56@gmail.com","Job Portal",  System.Text.Encoding.UTF8);
                     mail.Subject = "Job Application Submitted for Job ID" + Ad.Rows[0][0];
@@ -200,11 +200,11 @@ namespace staffingProblemProject.Candidate
                     client.Host = "smtp.gmail.com";
                     client.EnableSsl = true;
                     client.Send(mail);
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Job Applied Successfully')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Job Applied Successfully')</script>");
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<Script>alert('Already Applied')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Already Applied')</script>");
                 }
             }
             catch (Exception ex)
@@ -216,7 +216,7 @@ namespace staffingProblemProject.Candidate
                     errorMessage += ex2.ToString();
                     ex2 = ex2.InnerException;
                 }
-                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
+                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');</script>");
             }
         }
 
