@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Accord.Math.Geometry;
+using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -264,6 +266,38 @@ namespace staffingProblemProject.Member
 
             }
         }
+        void writeIntoCSV(string s)
+        {
+            try
+            {
+                BLL obj = new BLL();
+                string filePath = Server.MapPath("../Candidate/Files/TrainDataNumerical.csv");
+                string[] domains = { "Web Development", "DevOps", "Data Science", "Networks Engineering", "Cybersecurity", "Software Development", "Software Testing", "UI/UX Development", "Quality and Assurance", "Embedded Systems Development" };
+
+                DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
+                DataTable MLParams = obj.GetMLParamsById(s);
+
+                if (MLParams.Rows.Count == 0 || Ad.Rows.Count == 0)
+                {
+                    throw new Exception("No data found for the given ID(s).");
+                }
+                string line = $"{MLParams.Rows[0]["SSLC"]},{MLParams.Rows[0]["PUC"]},{MLParams.Rows[0]["Communication"]}," +
+                              $"{MLParams.Rows[0]["ProblemSolving"]},{MLParams.Rows[0]["Networks"]},{MLParams.Rows[0]["OS"]}," +
+                              $"{MLParams.Rows[0]["DBMS"]},{MLParams.Rows[0]["DSA"]},{MLParams.Rows[0]["CloudComputing"]}," +
+                              $"{MLParams.Rows[0]["Containers"]},{MLParams.Rows[0]["SystemDesign"]},{MLParams.Rows[0]["Maths"]}," +
+                              $"{MLParams.Rows[0]["VersionControl"]},{MLParams.Rows[0]["Python"]},{MLParams.Rows[0]["JSTS"]}," +
+                              $"{MLParams.Rows[0]["CC++"]},{MLParams.Rows[0]["Java"]}," +
+                              $"{(Array.IndexOf(domains, Ad.Rows[0]["JobType"].ToString()) + 1)}";
+
+                File.AppendAllText(filePath, line + Environment.NewLine);
+
+                System.Diagnostics.Debug.WriteLine("Successfully wrote to the file.");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("An error occurred: " + ex.Message);
+            }
+        }
 
         void btn_offerJob_Click(object sender, EventArgs e)
         {
@@ -279,7 +313,8 @@ namespace staffingProblemProject.Member
                     DataTable User = obj.GetUserById(s[1]);
                     obj.InsertJobOffer(s[1], int.Parse(Request.QueryString["adId"].ToString()));
 
-                    // TODO: Add code for updating the dataset (DYNAMIC DATASET for ML Decisions)
+                    //Function to write into Dataset
+                    writeIntoCSV(s[1]); 
 
                     MailMessage mail = new MailMessage();
                     mail.To.Add(User.Rows[0][5].ToString());

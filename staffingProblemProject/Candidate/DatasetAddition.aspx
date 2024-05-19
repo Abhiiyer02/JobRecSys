@@ -83,7 +83,7 @@
                               </a>DSA </td>
                           <td class="auto-style2">
                               <a href="#">
-                              <asp:DropDownList ID="DropDownListDS" runat="server" CssClass="offset-sm-0" Width="141px">
+                              <asp:DropDownList ID="DropDownListDS" runat="server" >
                                     <asp:ListItem Value="-1">Select</asp:ListItem>
                                     <asp:ListItem Value="1">Beginner </asp:ListItem>
                                     <asp:ListItem Value="2">Intermediate</asp:ListItem>

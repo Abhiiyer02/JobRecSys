@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.DynamicData;
 
 namespace staffingProblemProject.Candidate
 {
@@ -35,10 +36,40 @@ namespace staffingProblemProject.Candidate
             txtEmailId.Text = tabUser.Rows[0]["EmailId"].ToString();
             txtAddress.Text = tabUser.Rows[0]["Address"].ToString();
             txtSkills.Text = tabUser.Rows[0]["Skills"].ToString();
-            
 
+            DataTable userParams = obj.GetMLParamsById(Session["UserId"].ToString());
+            DropDownListSSLC.Items.FindByValue(userParams.Rows[0]["SSLC"].ToString()).Selected = true;
+            DropDownListPUC.Items.FindByValue(userParams.Rows[0]["PUC"].ToString()).Selected = true;
+            DropDownListCS.Items.FindByValue(userParams.Rows[0]["Communication"].ToString()).Selected = true;
+            DropDownListPSolving.Items.FindByValue(userParams.Rows[0]["ProblemSolving"].ToString()).Selected = true;
+            DropDownListNetworks.Items.FindByValue(userParams.Rows[0]["Networks"].ToString()).Selected = true;
+            DropDownListOS.Items.FindByValue(userParams.Rows[0]["OS"].ToString()).Selected = true;
+            DropDownListDBMS.Items.FindByValue(userParams.Rows[0]["DBMS"].ToString()).Selected = true;
+            DropDownListDS.Items.FindByValue(userParams.Rows[0]["DSA"].ToString()).Selected = true;
+            DropDownListCloud.Items.FindByValue(userParams.Rows[0]["CloudComputing"].ToString()).Selected = true;
+            DropDownListContainers.Items.FindByValue(userParams.Rows[0]["Containers"].ToString()).Selected = true;
+            DropDownListSD.Items.FindByValue(userParams.Rows[0]["SystemDesign"].ToString()).Selected = true;
+            DropDownListM.Items.FindByValue(userParams.Rows[0]["Maths"].ToString()).Selected = true;
+            DropDownListVCS.Items.FindByValue(userParams.Rows[0]["VersionControl"].ToString()).Selected = true;
+            DropDownListPython.Items.FindByValue(userParams.Rows[0]["Python"].ToString()).Selected = true;
+            DropDownListJS.Items.FindByValue(userParams.Rows[0]["JSTS"].ToString()).Selected = true;
+            DropDownListCCCP.Items.FindByValue(userParams.Rows[0]["CC++"].ToString()).Selected = true;
+            DropDownListJava.Items.FindByValue(userParams.Rows[0]["Java"].ToString()).Selected = true;
         }
 
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try {
+                BLL obj = new BLL();
+                obj.UpdateMLParams(Session["UserId"].ToString(), int.Parse(DropDownListSSLC.SelectedItem.Value), int.Parse(DropDownListPUC.SelectedItem.Value), int.Parse(DropDownListCS.SelectedItem.Value), int.Parse(DropDownListPSolving.SelectedItem.Value), int.Parse(DropDownListNetworks.SelectedItem.Value), int.Parse(DropDownListOS.SelectedItem.Value), int.Parse(DropDownListDBMS.SelectedItem.Value), int.Parse(DropDownListDS.SelectedItem.Value), int.Parse(DropDownListCloud.SelectedItem.Value), int.Parse(DropDownListContainers.SelectedItem.Value), int.Parse(DropDownListSD.SelectedItem.Value), int.Parse(DropDownListM.SelectedItem.Value), int.Parse(DropDownListVCS.SelectedItem.Value), int.Parse(DropDownListPython.SelectedItem.Value), int.Parse(DropDownListJS.SelectedItem.Value), int.Parse(DropDownListCCCP.SelectedItem.Value), int.Parse(DropDownListJava.SelectedItem.Value));
+                ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Profile Updated Successfull')</script>");
+
+            }
+            catch { 
+            
+            }
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             try

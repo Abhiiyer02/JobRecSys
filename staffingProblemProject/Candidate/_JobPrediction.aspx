@@ -28,7 +28,7 @@
                               <p> SSLC</p>
                           </td>
                           <td>
-                              <asp:DropDownList ID="DropDownListSSLC" runat="server">
+                              <asp:DropDownList ID="DropDownListSSLC" runat="server"> 
                                   <asp:ListItem Value="1">Beginner </asp:ListItem>
                                   <asp:ListItem Value="2">Intermediate</asp:ListItem>
                                   <asp:ListItem Value="3">Advanced</asp:ListItem>
