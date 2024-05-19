@@ -38,6 +38,8 @@ namespace staffingProblemProject {
         
         private tblJobOffersDataTable tabletblJobOffers;
         
+        private tblMLParamsDataTable tabletblMLParams;
+        
         private global::System.Data.DataRelation relationFK_tblJobAds_tblMembers;
         
         private global::System.Data.DataRelation relationFK_tblApplyJobs_tblJobAds;
@@ -51,6 +53,8 @@ namespace staffingProblemProject {
         private global::System.Data.DataRelation relationFK_tblJobOffers_tblJobAds;
         
         private global::System.Data.DataRelation relationFK_tblJobOffers_tblUsers;
+        
+        private global::System.Data.DataRelation relationFK_tblMLParams_tblUsers;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -100,6 +104,9 @@ namespace staffingProblemProject {
                 }
                 if ((ds.Tables["tblJobOffers"] != null)) {
                     base.Tables.Add(new tblJobOffersDataTable(ds.Tables["tblJobOffers"]));
+                }
+                if ((ds.Tables["tblMLParams"] != null)) {
+                    base.Tables.Add(new tblMLParamsDataTable(ds.Tables["tblMLParams"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -191,6 +198,16 @@ namespace staffingProblemProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tblMLParamsDataTable tblMLParams {
+            get {
+                return this.tabletblMLParams;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -277,6 +294,9 @@ namespace staffingProblemProject {
                 if ((ds.Tables["tblJobOffers"] != null)) {
                     base.Tables.Add(new tblJobOffersDataTable(ds.Tables["tblJobOffers"]));
                 }
+                if ((ds.Tables["tblMLParams"] != null)) {
+                    base.Tables.Add(new tblMLParamsDataTable(ds.Tables["tblMLParams"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -352,6 +372,12 @@ namespace staffingProblemProject {
                     this.tabletblJobOffers.InitVars();
                 }
             }
+            this.tabletblMLParams = ((tblMLParamsDataTable)(base.Tables["tblMLParams"]));
+            if ((initTable == true)) {
+                if ((this.tabletblMLParams != null)) {
+                    this.tabletblMLParams.InitVars();
+                }
+            }
             this.relationFK_tblJobAds_tblMembers = this.Relations["FK_tblJobAds_tblMembers"];
             this.relationFK_tblApplyJobs_tblJobAds = this.Relations["FK_tblApplyJobs_tblJobAds"];
             this.relationFK_tblApplyJobs_tblUsers = this.Relations["FK_tblApplyJobs_tblUsers"];
@@ -359,6 +385,7 @@ namespace staffingProblemProject {
             this.relationFK_tblShortlists_tblUsers = this.Relations["FK_tblShortlists_tblUsers"];
             this.relationFK_tblJobOffers_tblJobAds = this.Relations["FK_tblJobOffers_tblJobAds"];
             this.relationFK_tblJobOffers_tblUsers = this.Relations["FK_tblJobOffers_tblUsers"];
+            this.relationFK_tblMLParams_tblUsers = this.Relations["FK_tblMLParams_tblUsers"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -383,6 +410,8 @@ namespace staffingProblemProject {
             base.Tables.Add(this.tabletblShortlists);
             this.tabletblJobOffers = new tblJobOffersDataTable();
             base.Tables.Add(this.tabletblJobOffers);
+            this.tabletblMLParams = new tblMLParamsDataTable();
+            base.Tables.Add(this.tabletblMLParams);
             this.relationFK_tblJobAds_tblMembers = new global::System.Data.DataRelation("FK_tblJobAds_tblMembers", new global::System.Data.DataColumn[] {
                         this.tabletblMembers.MemberIdColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblJobAds.MemberIdColumn}, false);
@@ -411,6 +440,10 @@ namespace staffingProblemProject {
                         this.tabletblUsers.UserIdColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblJobOffers.UserIdColumn}, false);
             this.Relations.Add(this.relationFK_tblJobOffers_tblUsers);
+            this.relationFK_tblMLParams_tblUsers = new global::System.Data.DataRelation("FK_tblMLParams_tblUsers", new global::System.Data.DataColumn[] {
+                        this.tabletblUsers.UserIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblMLParams.UserIdColumn}, false);
+            this.Relations.Add(this.relationFK_tblMLParams_tblUsers);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -452,6 +485,12 @@ namespace staffingProblemProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializetblJobOffers() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializetblMLParams() {
             return false;
         }
         
@@ -530,6 +569,9 @@ namespace staffingProblemProject {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void tblJobOffersRowChangeEventHandler(object sender, tblJobOffersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void tblMLParamsRowChangeEventHandler(object sender, tblMLParamsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2850,6 +2892,543 @@ namespace staffingProblemProject {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tblMLParamsDataTable : global::System.Data.TypedTableBase<tblMLParamsRow> {
+            
+            private global::System.Data.DataColumn columnUserId;
+            
+            private global::System.Data.DataColumn columnSSLC;
+            
+            private global::System.Data.DataColumn columnPUC;
+            
+            private global::System.Data.DataColumn columnCommunication;
+            
+            private global::System.Data.DataColumn columnProblemSolving;
+            
+            private global::System.Data.DataColumn columnNetworks;
+            
+            private global::System.Data.DataColumn columnSystemDesign;
+            
+            private global::System.Data.DataColumn columnVersionControl;
+            
+            private global::System.Data.DataColumn columnJSTS;
+            
+            private global::System.Data.DataColumn columnJava;
+            
+            private global::System.Data.DataColumn columnDBMS;
+            
+            private global::System.Data.DataColumn columnDSA;
+            
+            private global::System.Data.DataColumn columnOS;
+            
+            private global::System.Data.DataColumn columnCloudComputing;
+            
+            private global::System.Data.DataColumn columnContainers;
+            
+            private global::System.Data.DataColumn columnMaths;
+            
+            private global::System.Data.DataColumn columnPython;
+            
+            private global::System.Data.DataColumn _columnCC__;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsDataTable() {
+                this.TableName = "tblMLParams";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal tblMLParamsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected tblMLParamsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn UserIdColumn {
+                get {
+                    return this.columnUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SSLCColumn {
+                get {
+                    return this.columnSSLC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PUCColumn {
+                get {
+                    return this.columnPUC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CommunicationColumn {
+                get {
+                    return this.columnCommunication;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ProblemSolvingColumn {
+                get {
+                    return this.columnProblemSolving;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NetworksColumn {
+                get {
+                    return this.columnNetworks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SystemDesignColumn {
+                get {
+                    return this.columnSystemDesign;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn VersionControlColumn {
+                get {
+                    return this.columnVersionControl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn JSTSColumn {
+                get {
+                    return this.columnJSTS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn JavaColumn {
+                get {
+                    return this.columnJava;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DBMSColumn {
+                get {
+                    return this.columnDBMS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DSAColumn {
+                get {
+                    return this.columnDSA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OSColumn {
+                get {
+                    return this.columnOS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CloudComputingColumn {
+                get {
+                    return this.columnCloudComputing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ContainersColumn {
+                get {
+                    return this.columnContainers;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MathsColumn {
+                get {
+                    return this.columnMaths;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PythonColumn {
+                get {
+                    return this.columnPython;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn _CC__Column {
+                get {
+                    return this._columnCC__;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow this[int index] {
+                get {
+                    return ((tblMLParamsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event tblMLParamsRowChangeEventHandler tblMLParamsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event tblMLParamsRowChangeEventHandler tblMLParamsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event tblMLParamsRowChangeEventHandler tblMLParamsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event tblMLParamsRowChangeEventHandler tblMLParamsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddtblMLParamsRow(tblMLParamsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow AddtblMLParamsRow(
+                        tblUsersRow parenttblUsersRowByFK_tblMLParams_tblUsers, 
+                        int SSLC, 
+                        int PUC, 
+                        int Communication, 
+                        int ProblemSolving, 
+                        int Networks, 
+                        int SystemDesign, 
+                        int VersionControl, 
+                        int JSTS, 
+                        int Java, 
+                        int DBMS, 
+                        int DSA, 
+                        int OS, 
+                        int CloudComputing, 
+                        int Containers, 
+                        int Maths, 
+                        int Python, 
+                        int _CC__) {
+                tblMLParamsRow rowtblMLParamsRow = ((tblMLParamsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        SSLC,
+                        PUC,
+                        Communication,
+                        ProblemSolving,
+                        Networks,
+                        SystemDesign,
+                        VersionControl,
+                        JSTS,
+                        Java,
+                        DBMS,
+                        DSA,
+                        OS,
+                        CloudComputing,
+                        Containers,
+                        Maths,
+                        Python,
+                        _CC__};
+                if ((parenttblUsersRowByFK_tblMLParams_tblUsers != null)) {
+                    columnValuesArray[0] = parenttblUsersRowByFK_tblMLParams_tblUsers[0];
+                }
+                rowtblMLParamsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblMLParamsRow);
+                return rowtblMLParamsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow FindByUserId(string UserId) {
+                return ((tblMLParamsRow)(this.Rows.Find(new object[] {
+                            UserId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tblMLParamsDataTable cln = ((tblMLParamsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tblMLParamsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnUserId = base.Columns["UserId"];
+                this.columnSSLC = base.Columns["SSLC"];
+                this.columnPUC = base.Columns["PUC"];
+                this.columnCommunication = base.Columns["Communication"];
+                this.columnProblemSolving = base.Columns["ProblemSolving"];
+                this.columnNetworks = base.Columns["Networks"];
+                this.columnSystemDesign = base.Columns["SystemDesign"];
+                this.columnVersionControl = base.Columns["VersionControl"];
+                this.columnJSTS = base.Columns["JSTS"];
+                this.columnJava = base.Columns["Java"];
+                this.columnDBMS = base.Columns["DBMS"];
+                this.columnDSA = base.Columns["DSA"];
+                this.columnOS = base.Columns["OS"];
+                this.columnCloudComputing = base.Columns["CloudComputing"];
+                this.columnContainers = base.Columns["Containers"];
+                this.columnMaths = base.Columns["Maths"];
+                this.columnPython = base.Columns["Python"];
+                this._columnCC__ = base.Columns["CC++"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserId);
+                this.columnSSLC = new global::System.Data.DataColumn("SSLC", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSSLC);
+                this.columnPUC = new global::System.Data.DataColumn("PUC", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPUC);
+                this.columnCommunication = new global::System.Data.DataColumn("Communication", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCommunication);
+                this.columnProblemSolving = new global::System.Data.DataColumn("ProblemSolving", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProblemSolving);
+                this.columnNetworks = new global::System.Data.DataColumn("Networks", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNetworks);
+                this.columnSystemDesign = new global::System.Data.DataColumn("SystemDesign", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSystemDesign);
+                this.columnVersionControl = new global::System.Data.DataColumn("VersionControl", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVersionControl);
+                this.columnJSTS = new global::System.Data.DataColumn("JSTS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJSTS);
+                this.columnJava = new global::System.Data.DataColumn("Java", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJava);
+                this.columnDBMS = new global::System.Data.DataColumn("DBMS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDBMS);
+                this.columnDSA = new global::System.Data.DataColumn("DSA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDSA);
+                this.columnOS = new global::System.Data.DataColumn("OS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOS);
+                this.columnCloudComputing = new global::System.Data.DataColumn("CloudComputing", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCloudComputing);
+                this.columnContainers = new global::System.Data.DataColumn("Containers", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContainers);
+                this.columnMaths = new global::System.Data.DataColumn("Maths", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaths);
+                this.columnPython = new global::System.Data.DataColumn("Python", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPython);
+                this._columnCC__ = new global::System.Data.DataColumn("CC++", typeof(int), null, global::System.Data.MappingType.Element);
+                this._columnCC__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCC__");
+                this._columnCC__.ExtendedProperties.Add("Generator_UserColumnName", "CC++");
+                base.Columns.Add(this._columnCC__);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnUserId}, true));
+                this.columnUserId.AllowDBNull = false;
+                this.columnUserId.Unique = true;
+                this.columnUserId.MaxLength = 50;
+                this.columnSSLC.AllowDBNull = false;
+                this.columnPUC.AllowDBNull = false;
+                this.columnCommunication.AllowDBNull = false;
+                this.columnProblemSolving.AllowDBNull = false;
+                this.columnNetworks.AllowDBNull = false;
+                this.columnSystemDesign.AllowDBNull = false;
+                this.columnVersionControl.AllowDBNull = false;
+                this.columnJSTS.AllowDBNull = false;
+                this.columnJava.AllowDBNull = false;
+                this.columnDBMS.AllowDBNull = false;
+                this.columnDSA.AllowDBNull = false;
+                this.columnOS.AllowDBNull = false;
+                this.columnCloudComputing.AllowDBNull = false;
+                this.columnContainers.AllowDBNull = false;
+                this.columnMaths.AllowDBNull = false;
+                this.columnPython.AllowDBNull = false;
+                this._columnCC__.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow NewtblMLParamsRow() {
+                return ((tblMLParamsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tblMLParamsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tblMLParamsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tblMLParamsRowChanged != null)) {
+                    this.tblMLParamsRowChanged(this, new tblMLParamsRowChangeEvent(((tblMLParamsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tblMLParamsRowChanging != null)) {
+                    this.tblMLParamsRowChanging(this, new tblMLParamsRowChangeEvent(((tblMLParamsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tblMLParamsRowDeleted != null)) {
+                    this.tblMLParamsRowDeleted(this, new tblMLParamsRowChangeEvent(((tblMLParamsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tblMLParamsRowDeleting != null)) {
+                    this.tblMLParamsRowDeleting(this, new tblMLParamsRowChangeEvent(((tblMLParamsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemovetblMLParamsRow(tblMLParamsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DL ds = new DL();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tblMLParamsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class tblAdminRow : global::System.Data.DataRow {
@@ -3501,6 +4080,17 @@ namespace staffingProblemProject {
                     return ((tblJobOffersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblJobOffers_tblUsers"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow[] GettblMLParamsRows() {
+                if ((this.Table.ChildRelations["FK_tblMLParams_tblUsers"] == null)) {
+                    return new tblMLParamsRow[0];
+                }
+                else {
+                    return ((tblMLParamsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblMLParams_tblUsers"])));
+                }
+            }
         }
         
         /// <summary>
@@ -4014,6 +4604,230 @@ namespace staffingProblemProject {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tblMLParamsRow : global::System.Data.DataRow {
+            
+            private tblMLParamsDataTable tabletblMLParams;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal tblMLParamsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletblMLParams = ((tblMLParamsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string UserId {
+                get {
+                    return ((string)(this[this.tabletblMLParams.UserIdColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.UserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SSLC {
+                get {
+                    return ((int)(this[this.tabletblMLParams.SSLCColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.SSLCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int PUC {
+                get {
+                    return ((int)(this[this.tabletblMLParams.PUCColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.PUCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Communication {
+                get {
+                    return ((int)(this[this.tabletblMLParams.CommunicationColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.CommunicationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ProblemSolving {
+                get {
+                    return ((int)(this[this.tabletblMLParams.ProblemSolvingColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.ProblemSolvingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Networks {
+                get {
+                    return ((int)(this[this.tabletblMLParams.NetworksColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.NetworksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SystemDesign {
+                get {
+                    return ((int)(this[this.tabletblMLParams.SystemDesignColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.SystemDesignColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int VersionControl {
+                get {
+                    return ((int)(this[this.tabletblMLParams.VersionControlColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.VersionControlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int JSTS {
+                get {
+                    return ((int)(this[this.tabletblMLParams.JSTSColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.JSTSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Java {
+                get {
+                    return ((int)(this[this.tabletblMLParams.JavaColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.JavaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int DBMS {
+                get {
+                    return ((int)(this[this.tabletblMLParams.DBMSColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.DBMSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int DSA {
+                get {
+                    return ((int)(this[this.tabletblMLParams.DSAColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.DSAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int OS {
+                get {
+                    return ((int)(this[this.tabletblMLParams.OSColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.OSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int CloudComputing {
+                get {
+                    return ((int)(this[this.tabletblMLParams.CloudComputingColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.CloudComputingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Containers {
+                get {
+                    return ((int)(this[this.tabletblMLParams.ContainersColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.ContainersColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Maths {
+                get {
+                    return ((int)(this[this.tabletblMLParams.MathsColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.MathsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Python {
+                get {
+                    return ((int)(this[this.tabletblMLParams.PythonColumn]));
+                }
+                set {
+                    this[this.tabletblMLParams.PythonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int _CC__ {
+                get {
+                    return ((int)(this[this.tabletblMLParams._CC__Column]));
+                }
+                set {
+                    this[this.tabletblMLParams._CC__Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblUsersRow tblUsersRow {
+                get {
+                    return ((tblUsersRow)(this.GetParentRow(this.Table.ParentRelations["FK_tblMLParams_tblUsers"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tblMLParams_tblUsers"]);
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4237,6 +5051,40 @@ namespace staffingProblemProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblJobOffersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class tblMLParamsRowChangeEvent : global::System.EventArgs {
+            
+            private tblMLParamsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRowChangeEvent(tblMLParamsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tblMLParamsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8130,6 +8978,719 @@ namespace staffingProblemProject.DLTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tblMLParamsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public tblMLParamsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tblMLParams";
+            tableMapping.ColumnMappings.Add("UserId", "UserId");
+            tableMapping.ColumnMappings.Add("SSLC", "SSLC");
+            tableMapping.ColumnMappings.Add("PUC", "PUC");
+            tableMapping.ColumnMappings.Add("Communication", "Communication");
+            tableMapping.ColumnMappings.Add("ProblemSolving", "ProblemSolving");
+            tableMapping.ColumnMappings.Add("Networks", "Networks");
+            tableMapping.ColumnMappings.Add("SystemDesign", "SystemDesign");
+            tableMapping.ColumnMappings.Add("VersionControl", "VersionControl");
+            tableMapping.ColumnMappings.Add("JSTS", "JSTS");
+            tableMapping.ColumnMappings.Add("Java", "Java");
+            tableMapping.ColumnMappings.Add("DBMS", "DBMS");
+            tableMapping.ColumnMappings.Add("DSA", "DSA");
+            tableMapping.ColumnMappings.Add("OS", "OS");
+            tableMapping.ColumnMappings.Add("CloudComputing", "CloudComputing");
+            tableMapping.ColumnMappings.Add("Containers", "Containers");
+            tableMapping.ColumnMappings.Add("Maths", "Maths");
+            tableMapping.ColumnMappings.Add("Python", "Python");
+            tableMapping.ColumnMappings.Add("CC++", "CC++");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [tblMLParams] WHERE (([UserId] = @Original_UserId))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tblMLParams] ([UserId], [SSLC], [PUC], [Communication], [ProblemSolving], [Networks], [SystemDesign], [VersionControl], [JSTS], [Java], [DBMS], [DSA], [OS], [CloudComputing], [Containers], [Maths], [Python], [CC++]) VALUES (@UserId, @SSLC, @PUC, @Communication, @ProblemSolving, @Networks, @SystemDesign, @VersionControl, @JSTS, @Java, @DBMS, @DSA, @OS, @CloudComputing, @Containers, @Maths, @Python, @p1)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SSLC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SSLC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PUC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Communication", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Communication", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemSolving", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemSolving", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Networks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Networks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SystemDesign", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SystemDesign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VersionControl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VersionControl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JSTS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JSTS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Java", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Java", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DBMS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DBMS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DSA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloudComputing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloudComputing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Containers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Containers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Maths", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Maths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Python", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Python", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CC++", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tblMLParams] SET [UserId] = @UserId, [SSLC] = @SSLC, [PUC] = @PUC, [Communication] = @Communication, [ProblemSolving] = @ProblemSolving, [Networks] = @Networks, [SystemDesign] = @SystemDesign, [VersionControl] = @VersionControl, [JSTS] = @JSTS, [Java] = @Java, [DBMS] = @DBMS, [DSA] = @DSA, [OS] = @OS, [CloudComputing] = @CloudComputing, [Containers] = @Containers, [Maths] = @Maths, [Python] = @Python, [CC++] = @p1 WHERE (([UserId] = @Original_UserId))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SSLC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SSLC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PUC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Communication", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Communication", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemSolving", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemSolving", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Networks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Networks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SystemDesign", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SystemDesign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VersionControl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VersionControl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JSTS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "JSTS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Java", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Java", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DBMS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DBMS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DSA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloudComputing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloudComputing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Containers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Containers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Maths", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Maths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Python", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Python", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CC++", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["replacementDatabaseConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT * FROM tblMLParams";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT COUNT(*) FROM tblMLParams WHERE [UserId] = @UserId
+  AND (-1 IN (
+        [SSLC], [PUC], [Communication], [ProblemSolving], [Networks], 
+        [SystemDesign], [VersionControl], [JSTS], [Java], [DBMS], 
+        [DSA], [OS], [CloudComputing], [Containers], [Maths], 
+        [Python], [CC++]
+    ));";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT * FROM tblMLParams where UserId = @UserId";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"INSERT INTO [tblMLParams] ([UserId], [SSLC], [PUC], [Communication], [ProblemSolving], [Networks], [SystemDesign], [VersionControl], [JSTS], [Java], [DBMS], [DSA], [OS], [CloudComputing], [Containers], [Maths], [Python], [CC++]) VALUES (@UserId, @SSLC, @PUC, @Communication, @ProblemSolving, @Networks, @SystemDesign, @VersionControl, @JSTS, @Java, @DBMS, @DSA, @OS, @CloudComputing, @Containers, @Maths, @Python, @Ccpp)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SSLC", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SSLC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PUC", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Communication", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Communication", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemSolving", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemSolving", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Networks", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Networks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SystemDesign", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SystemDesign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VersionControl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VersionControl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JSTS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "JSTS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Java", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Java", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DBMS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DBMS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DSA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloudComputing", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CloudComputing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Containers", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Containers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Maths", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Maths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Python", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Python", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ccpp", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CC++", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"UPDATE [tblMLParams] SET [UserId] = @UserId, [SSLC] = @SSLC, [PUC] = @PUC, [Communication] = @Communication, [ProblemSolving] = @ProblemSolving, [Networks] = @Networks, [SystemDesign] = @SystemDesign, [VersionControl] = @VersionControl, [JSTS] = @JSTS, [Java] = @Java, [DBMS] = @DBMS, [DSA] = @DSA, [OS] = @OS, [CloudComputing] = @CloudComputing, [Containers] = @Containers, [Maths] = @Maths, [Python] = @Python, [CC++] = @Ccpp WHERE (([UserId] = @Original_UserId))";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SSLC", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SSLC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PUC", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Communication", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Communication", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemSolving", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemSolving", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Networks", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Networks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SystemDesign", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SystemDesign", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VersionControl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VersionControl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@JSTS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "JSTS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Java", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Java", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DBMS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DBMS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DSA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloudComputing", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CloudComputing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Containers", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Containers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Maths", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Maths", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Python", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Python", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ccpp", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CC++", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DL.tblMLParamsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DL.tblMLParamsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DL.tblMLParamsDataTable dataTable = new DL.tblMLParamsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DL.tblMLParamsDataTable dataTable, string UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserId));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DL.tblMLParamsDataTable GetMLParamsById(string UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserId));
+            }
+            DL.tblMLParamsDataTable dataTable = new DL.tblMLParamsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DL.tblMLParamsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DL dataSet) {
+            return this.Adapter.Update(dataSet, "tblMLParams");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_UserId) {
+            if ((Original_UserId == null)) {
+                throw new global::System.ArgumentNullException("Original_UserId");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_UserId));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    string UserId, 
+                    int SSLC, 
+                    int PUC, 
+                    int Communication, 
+                    int ProblemSolving, 
+                    int Networks, 
+                    int SystemDesign, 
+                    int VersionControl, 
+                    int JSTS, 
+                    int Java, 
+                    int DBMS, 
+                    int DSA, 
+                    int OS, 
+                    int CloudComputing, 
+                    int Containers, 
+                    int Maths, 
+                    int Python, 
+                    int p1) {
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UserId));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SSLC));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(PUC));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Communication));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ProblemSolving));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Networks));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(SystemDesign));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(VersionControl));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(JSTS));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(Java));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(DBMS));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(DSA));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(OS));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(CloudComputing));
+            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(Containers));
+            this.Adapter.InsertCommand.Parameters[15].Value = ((int)(Maths));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(Python));
+            this.Adapter.InsertCommand.Parameters[17].Value = ((int)(p1));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string UserId, 
+                    int SSLC, 
+                    int PUC, 
+                    int Communication, 
+                    int ProblemSolving, 
+                    int Networks, 
+                    int SystemDesign, 
+                    int VersionControl, 
+                    int JSTS, 
+                    int Java, 
+                    int DBMS, 
+                    int DSA, 
+                    int OS, 
+                    int CloudComputing, 
+                    int Containers, 
+                    int Maths, 
+                    int Python, 
+                    int p1, 
+                    string Original_UserId) {
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserId));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SSLC));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(PUC));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Communication));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ProblemSolving));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Networks));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(SystemDesign));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(VersionControl));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(JSTS));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Java));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(DBMS));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(DSA));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(OS));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(CloudComputing));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Containers));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Maths));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Python));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(p1));
+            if ((Original_UserId == null)) {
+                throw new global::System.ArgumentNullException("Original_UserId");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_UserId));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int SSLC, 
+                    int PUC, 
+                    int Communication, 
+                    int ProblemSolving, 
+                    int Networks, 
+                    int SystemDesign, 
+                    int VersionControl, 
+                    int JSTS, 
+                    int Java, 
+                    int DBMS, 
+                    int DSA, 
+                    int OS, 
+                    int CloudComputing, 
+                    int Containers, 
+                    int Maths, 
+                    int Python, 
+                    int p1, 
+                    string Original_UserId) {
+            return this.Update(Original_UserId, SSLC, PUC, Communication, ProblemSolving, Networks, SystemDesign, VersionControl, JSTS, Java, DBMS, DSA, OS, CloudComputing, Containers, Maths, Python, p1, Original_UserId);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> CheckMLParams(string UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserId));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertMLParams(
+                    string UserId, 
+                    int SSLC, 
+                    int PUC, 
+                    int Communication, 
+                    int ProblemSolving, 
+                    int Networks, 
+                    int SystemDesign, 
+                    int VersionControl, 
+                    int JSTS, 
+                    int Java, 
+                    int DBMS, 
+                    int DSA, 
+                    int OS, 
+                    int CloudComputing, 
+                    int Containers, 
+                    int Maths, 
+                    int Python, 
+                    int Ccpp) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserId));
+            }
+            command.Parameters[1].Value = ((int)(SSLC));
+            command.Parameters[2].Value = ((int)(PUC));
+            command.Parameters[3].Value = ((int)(Communication));
+            command.Parameters[4].Value = ((int)(ProblemSolving));
+            command.Parameters[5].Value = ((int)(Networks));
+            command.Parameters[6].Value = ((int)(SystemDesign));
+            command.Parameters[7].Value = ((int)(VersionControl));
+            command.Parameters[8].Value = ((int)(JSTS));
+            command.Parameters[9].Value = ((int)(Java));
+            command.Parameters[10].Value = ((int)(DBMS));
+            command.Parameters[11].Value = ((int)(DSA));
+            command.Parameters[12].Value = ((int)(OS));
+            command.Parameters[13].Value = ((int)(CloudComputing));
+            command.Parameters[14].Value = ((int)(Containers));
+            command.Parameters[15].Value = ((int)(Maths));
+            command.Parameters[16].Value = ((int)(Python));
+            command.Parameters[17].Value = ((int)(Ccpp));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateMLParams(
+                    string UserId, 
+                    int SSLC, 
+                    int PUC, 
+                    int Communication, 
+                    int ProblemSolving, 
+                    int Networks, 
+                    int SystemDesign, 
+                    int VersionControl, 
+                    int JSTS, 
+                    int Java, 
+                    int DBMS, 
+                    int DSA, 
+                    int OS, 
+                    int CloudComputing, 
+                    int Containers, 
+                    int Maths, 
+                    int Python, 
+                    int Ccpp, 
+                    string Original_UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((UserId == null)) {
+                throw new global::System.ArgumentNullException("UserId");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserId));
+            }
+            command.Parameters[1].Value = ((int)(SSLC));
+            command.Parameters[2].Value = ((int)(PUC));
+            command.Parameters[3].Value = ((int)(Communication));
+            command.Parameters[4].Value = ((int)(ProblemSolving));
+            command.Parameters[5].Value = ((int)(Networks));
+            command.Parameters[6].Value = ((int)(SystemDesign));
+            command.Parameters[7].Value = ((int)(VersionControl));
+            command.Parameters[8].Value = ((int)(JSTS));
+            command.Parameters[9].Value = ((int)(Java));
+            command.Parameters[10].Value = ((int)(DBMS));
+            command.Parameters[11].Value = ((int)(DSA));
+            command.Parameters[12].Value = ((int)(OS));
+            command.Parameters[13].Value = ((int)(CloudComputing));
+            command.Parameters[14].Value = ((int)(Containers));
+            command.Parameters[15].Value = ((int)(Maths));
+            command.Parameters[16].Value = ((int)(Python));
+            command.Parameters[17].Value = ((int)(Ccpp));
+            if ((Original_UserId == null)) {
+                throw new global::System.ArgumentNullException("Original_UserId");
+            }
+            else {
+                command.Parameters[18].Value = ((string)(Original_UserId));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8154,6 +9715,8 @@ namespace staffingProblemProject.DLTableAdapters {
         private tblShortlistsTableAdapter _tblShortlistsTableAdapter;
         
         private tblJobOffersTableAdapter _tblJobOffersTableAdapter;
+        
+        private tblMLParamsTableAdapter _tblMLParamsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -8270,6 +9833,20 @@ namespace staffingProblemProject.DLTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public tblMLParamsTableAdapter tblMLParamsTableAdapter {
+            get {
+                return this._tblMLParamsTableAdapter;
+            }
+            set {
+                this._tblMLParamsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -8315,6 +9892,10 @@ namespace staffingProblemProject.DLTableAdapters {
                             && (this._tblJobOffersTableAdapter.Connection != null))) {
                     return this._tblJobOffersTableAdapter.Connection;
                 }
+                if (((this._tblMLParamsTableAdapter != null) 
+                            && (this._tblMLParamsTableAdapter.Connection != null))) {
+                    return this._tblMLParamsTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -8347,6 +9928,9 @@ namespace staffingProblemProject.DLTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._tblJobOffersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tblMLParamsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -8423,6 +10007,15 @@ namespace staffingProblemProject.DLTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tblMLParamsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblMLParams.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblMLParamsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -8489,6 +10082,14 @@ namespace staffingProblemProject.DLTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tblMLParamsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblMLParams.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblMLParamsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -8499,6 +10100,14 @@ namespace staffingProblemProject.DLTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DL dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tblMLParamsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblMLParams.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblMLParamsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tblJobOffersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblJobOffers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -8629,6 +10238,11 @@ namespace staffingProblemProject.DLTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._tblMLParamsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblMLParamsTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -8724,6 +10338,15 @@ namespace staffingProblemProject.DLTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblJobOffersTableAdapter.Adapter);
                     }
                 }
+                if ((this._tblMLParamsTableAdapter != null)) {
+                    revertConnections.Add(this._tblMLParamsTableAdapter, this._tblMLParamsTableAdapter.Connection);
+                    this._tblMLParamsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblMLParamsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblMLParamsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblMLParamsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblMLParamsTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -8809,6 +10432,10 @@ namespace staffingProblemProject.DLTableAdapters {
                 if ((this._tblJobOffersTableAdapter != null)) {
                     this._tblJobOffersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblJobOffersTableAdapter]));
                     this._tblJobOffersTableAdapter.Transaction = null;
+                }
+                if ((this._tblMLParamsTableAdapter != null)) {
+                    this._tblMLParamsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblMLParamsTableAdapter]));
+                    this._tblMLParamsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

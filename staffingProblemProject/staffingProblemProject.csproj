@@ -250,6 +250,7 @@
     <Content Include="assets\vendor\venobox\venobox.min.js" />
     <Content Include="assets\vendor\waypoints\jquery.waypoints.min.js" />
     <Content Include="Candidate\CandidateAccount.aspx" />
+    <Content Include="Candidate\DatasetAddition.aspx" />
     <Content Include="Candidate\frmModel.aspx" />
     <Content Include="Candidate\frmResults.aspx" />
     <Content Include="Candidate\_JobPrediction.aspx" />
@@ -508,6 +509,13 @@
     </Compile>
     <Compile Include="Candidate\CandidateMP.Master.designer.cs">
       <DependentUpon>CandidateMP.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\DatasetAddition.aspx.cs">
+      <DependentUpon>DatasetAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\DatasetAddition.aspx.designer.cs">
+      <DependentUpon>DatasetAddition.aspx</DependentUpon>
     </Compile>
     <Compile Include="Candidate\frmModel.aspx.cs">
       <DependentUpon>frmModel.aspx</DependentUpon>

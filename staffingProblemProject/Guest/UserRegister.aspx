@@ -10,11 +10,7 @@
          <h2><span>REGISTER </span> FORM FOR NEW USERS!</h2>
         </div>
 
-        <div class="row">
-
-
-      
-     
+        <div class="row" >
             <table style="width:100%;">
                 <tr>
                     <td>
@@ -120,7 +116,7 @@
                                                         ErrorMessage="Upload Photo" ToolTip="Upload Photo" 
                                                         ValidationGroup="registration">*</asp:RequiredFieldValidator>
                                                 </td>
-                                            </tr>
+                                            </tr>                                   
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
                                                     <strong>Skills</strong></td>
@@ -195,31 +191,7 @@
                         </table>
                     </td>
                     <td>
-                       
-                        <%--<asp:Image ID="Image1" runat="server" 
-                            ImageUrl="~/assets/img/portfolio/portfolio-1.jpg" Height="200px" />
-                            <br />
-                             <br />
-                          <asp:Image ID="Image2" runat="server" 
-                            ImageUrl="~/assets/img/portfolio/portfolio-2.jpg" Height="200px" />
-                            <br />
-                             <br />
-                            <asp:Image ID="Image3" runat="server" 
-                            ImageUrl="~/assets/img/portfolio/portfolio-3.jpg" Height="200px"/>
-                       --%>
-                         
-        
-         
-        </div>
-
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+        </div>                 
                        </td>
                     <td>
                         &nbsp;</td>
@@ -241,19 +213,9 @@
                         &nbsp;</td>
                 </tr>
             </table>
-            <br />
-
-        
-        
-
-
-         
-         </div>
-
-       
+        </div>       
    </div>
     <br />
          <br />
-
    </asp:Panel>
 </asp:Content>

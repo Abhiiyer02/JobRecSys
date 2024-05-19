@@ -40,11 +40,11 @@ namespace staffingProblemProject.Guest
                     lblError.Text = " ";
                     lblSuccess.ForeColor = System.Drawing.Color.Green;
                     lblSuccess.Text = "User Registration is Successfull";
-                    ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Registration is Successfull')</script>");
+                    //ClientScript.RegisterStartupScript(this.GetType(), "key", "<script>alert('User Registration is Successfull')</script>");
                     txtAddress.Text = txtEmailId.Text = txtName.Text = txtPhone.Text = txtSkills.Text = string.Empty;
-
-
-
+                    obj.InsertMLParams(txtUserId.Text, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+                    Session["MLP"] = txtUserId.Text;
+                    Response.Redirect("~/candidate/datasetaddition.aspx");
                 }
                 else
                 {

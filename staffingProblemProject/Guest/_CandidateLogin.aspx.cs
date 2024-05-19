@@ -26,9 +26,16 @@ namespace staffingProblemProject.Guest
 
                 if (obj.CheckUserLogin(txtUserId.Text, txtPassword.Text))
                 {
-                    Session["UserId"] = txtUserId.Text;
-
-                    Response.Redirect("~/Candidate/_Jobs.aspx?value=a");
+                    
+                    if (obj.CheckMLParams(txtUserId.Text))
+                    {
+                        Session["UserId"] = txtUserId.Text;
+                        Response.Redirect("~/Candidate/_Jobs.aspx?value=a");
+                    }
+                    else {
+                        Session["MLP"] = txtUserId.Text;    
+                        Response.Redirect("~/candidate/datasetAddition.aspx");
+                    }
                 }
                 else
                 {

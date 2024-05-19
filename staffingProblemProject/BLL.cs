@@ -18,7 +18,7 @@ namespace staffingProblemProject
         tblApplyJobsTableAdapter applyObj = new tblApplyJobsTableAdapter();
         tblShortlistsTableAdapter shortlistObj = new tblShortlistsTableAdapter();
         tblJobOffersTableAdapter jobOfferObj = new tblJobOffersTableAdapter();
-
+        tblMLParamsTableAdapter MLParamsObj = new tblMLParamsTableAdapter();
         #region ----- User Account -----
 
         //function to check the receipt number
@@ -197,7 +197,6 @@ namespace staffingProblemProject
         }
 
 
-
         //function to add new ads
         public void InsertNewAd(string memberId, string jobType, string subType, string skills, string desc, DateTime date, string status)
         {
@@ -314,5 +313,32 @@ namespace staffingProblemProject
             return true;
         }
 
+        //Queries for DAtabse Entries
+        //public bool GetMLParams(string userID, int sslc, int puc, int comms, int  ps, int networks, int sysDesign, int vcs, int jsts, int java, int dbms, int dsa, int os, int cloud, int containers, int math, int python)
+        //{
+        //    return MLParamsObj.GetMLParamsById();
+        //}
+        public DataTable GetMLParamsById(string userId)
+        {
+            return MLParamsObj.GetMLParamsById(userId);
+        }
+        public bool CheckMLParams(string userId)
+        {
+            int cnt = int.Parse(MLParamsObj.CheckMLParams(userId).ToString());
+
+            if (cnt == 1)
+
+                return false;
+
+            return true;
+        }
+        public void InsertMLParams(string userID, int sslc, int puc, int comms, int ps, int networks, int sysDesign, int vcs, int jsts, int java, int dbms, int dsa, int os, int cloud, int containers, int math, int python, int ccpp)
+        {
+            MLParamsObj.InsertMLParams(userID, sslc, puc, comms, ps, networks, sysDesign, vcs, jsts, java, dbms, dsa, os, cloud, containers, math, python, ccpp);
+        }
+        public void UpdateMLParams(string userID, int sslc, int puc, int comms, int ps, int networks, int sysDesign, int vcs, int jsts, int java, int dbms, int dsa, int os, int cloud, int containers, int math, int python, int ccpp)
+        {
+            MLParamsObj.UpdateMLParams(userID, sslc, puc, comms, ps, networks, sysDesign, vcs, jsts, java, dbms, dsa, os, cloud, containers, math, python, ccpp, userID);
+        }
     }
 }

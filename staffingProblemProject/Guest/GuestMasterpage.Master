@@ -67,14 +67,14 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="Index.aspx">HOME<i class="la la-angle-down"></i></a></li>     
+          <li class="active"><a href="/Guest/Index.aspx">HOME<i class="la la-angle-down"></i></a></li>     
            <li class="drop-down"><a href="">LOGIN / SIGNUP</a>
             <ul>
-                <li><a href="AdminLogin.aspx">ADMIN LOGIN</a></li> 
+                <li><a href="/Guest/AdminLogin.aspx">ADMIN LOGIN</a></li> 
                 <%--<li><a href="UserRegister.aspx">APPLICANT SIGNUP</a></li>--%>  
-                <li><a href="_CandidateLogin.aspx">APPLICANT LOGIN</a></li>  
+                <li><a href="/Guest/_CandidateLogin.aspx">APPLICANT LOGIN</a></li>  
               <%--<li><a href="Register.aspx">COMPANY SIGNUP</a></li>--%>            
-              <li><a href="Login.aspx">COMPANY LOGIN</a></li>
+              <li><a href="/Guest/Login.aspx">COMPANY LOGIN</a></li>
                           
             </ul>
           </li>    
