@@ -18,7 +18,7 @@
                                     <div id="popup">
                                         <div style="height:400px; width:auto; overflow:auto">
                                                
-                                            <asp:Table ID="Table5" runat="server" Font-Size="Small">
+                                            <asp:Table ID="Table5" runat="server" Font-Size="Small" Font-Names="poppins" HorizontalAlign="Center">
                                             </asp:Table>
                                                
                                         </div>

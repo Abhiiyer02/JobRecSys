@@ -88,8 +88,6 @@ namespace staffingProblemProject.Candidate
                 _output = NaiveBayes(values);
 
                 lblResult.ForeColor = System.Drawing.Color.Green;
-                lblResult.Font.Bold = true;
-                lblResult.Font.Size = 16;
                 ResultAnnouncement.Visible = true;
                 lblResult.Text = _output;
 

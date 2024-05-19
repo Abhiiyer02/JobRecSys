@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Candidate/CandidateMP.Master" AutoEventWireup="true" CodeBehind="_Jobs.aspx.cs" Inherits="staffingProblemProject.Candidate._Search" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 126px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <asp:Panel ID="panelExistingUsers" runat="server">
@@ -14,7 +19,7 @@
           
                          <table align="center" style="width: 95%;">
                              <tr>
-                                 <td class="style1">
+                                 <td class="auto-style1">
                                      <strong>Job Domain</strong></td>
                                  <td>
                                      <asp:DropDownList ID="ddlJobType" runat="server" Width="250px">
@@ -47,7 +52,7 @@
                             <td>
                              <div id="popup">
                          <div style="height:400px; width:auto; overflow:auto">
-                                <asp:Table ID="Table4" runat="server" Font-Size="Small">
+                                <asp:Table ID="Table4" runat="server" Font-Size="Small" Font-Names="poppins" HorizontalAlign="Center">
                                 </asp:Table>
                                 </div>
                                 </div>
