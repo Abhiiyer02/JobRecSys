@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:Panel ID="panelExistingUsers" runat="server">
+    <asp:Panel ID="panelExistingUsers" runat="server">
 
  <div class="container">
 
@@ -51,7 +51,7 @@
                             <td>
                              <div id="popup">
                          <div style="height:400px; width:auto; overflow:auto">
-                                <asp:Table ID="Table4" runat="server" Font-Size="Small">
+                                <asp:Table ID="Table4" runat="server" Font-Size="Small" Font-Names="poppins" HorizontalAlign="Center">
                                 </asp:Table>
                                 </div>
                                 </div>

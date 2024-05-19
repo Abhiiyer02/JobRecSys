@@ -323,8 +323,8 @@
                      <br />
                      <br />
                      <br />
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="ResultAnnouncement" runat="server"><h5 class="sec-head" style="display:inline">Your Predicted Domain is </h5></asp:Label>
-                     &nbsp;<asp:Label ID="lblResult" runat="server" Font-Names="poppins"></asp:Label>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="ResultAnnouncement" runat="server"><h5 class="sec-head" style="display:inline">Your Predicted Domain is ... </h5></asp:Label>
+                     &nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lblResult" runat="server" Font-Names="poppins" Font-Italic="True" Font-Size="X-Large"></asp:Label>
                
                 </div>
         </div>
@@ -340,7 +340,7 @@
                     <td>
                      <div id="popup">
                  <div style="height:400px; width:auto; overflow:auto">
-                        <asp:Table ID="Table4" runat="server" Font-Size="Small">
+                        <asp:Table ID="Table4" runat="server" Font-Size="Small" Font-Names="poppins" HorizontalAlign="Center" Width="100%">
                         </asp:Table>
                         </div>
                         </div>

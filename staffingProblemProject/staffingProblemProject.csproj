@@ -710,6 +710,7 @@
     <Content Include="Candidate\Files\TestingDataset.xlsx" />
     <Content Include="Candidate\Files\TrainDataNumerical.csv" />
     <Content Include="Candidate\Files\ActualDataset.xlsx" />
+    <Content Include="Candidate\Files\AprioriTrainingDataset.xls" />
     <None Include="Candidate\Files\TrainingDataset.xls" />
     <None Include="ClassDiagram1.cd" />
     <None Include="DL.xsc">

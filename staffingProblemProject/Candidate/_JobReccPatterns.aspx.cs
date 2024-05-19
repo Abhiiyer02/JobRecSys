@@ -28,13 +28,13 @@ namespace staffingProblemProject.Candidate
 
         private void TrainingDS()
         {
-            string FileName = "TrainingDataset.xls";
+            string FileName = "AprioriTrainingDataset.xls";
 
             string Extension = ".xls";
 
             string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
 
-            string _Location = "TrainingDataset";
+            string _Location = "AprioriTrainingDataset";
 
             string FilePath = Server.MapPath(FolderPath + FileName);
 
@@ -695,7 +695,7 @@ namespace staffingProblemProject.Candidate
 
             connExcel.Open();
 
-            cmdExcel.CommandText = "SELECT TOP 500 * From [" + SheetName + "]";
+            cmdExcel.CommandText = "SELECT TOP 2500 * From [" + SheetName + "]";
 
             oda.SelectCommand = cmdExcel;
 
@@ -725,7 +725,7 @@ namespace staffingProblemProject.Candidate
 
                     //    dt.Rows[i]["Result"].ToString();
 
-                string _transaction = "SSLC_" + dt.Rows[i]["SSLC"].ToString() + "," + "PUC_" + dt.Rows[i]["Pre-University"].ToString() + "," + "Communication_" + dt.Rows[i]["Communication"].ToString() + "," + "Problem Solving_" +
+                string _transaction = "Communication_" + dt.Rows[i]["Communication"].ToString() + "," + "Problem Solving_" +
                         dt.Rows[i]["Problem Solving"].ToString() + "," + "Networks_" + dt.Rows[i]["Networks"].ToString() + "," + "Operating Systems_" + dt.Rows[i]["Operating Systems"].ToString() + "," + "DBMS_" +
                         dt.Rows[i]["DBMS"].ToString() + "," + "DSA_" + dt.Rows[i]["DSA"].ToString() + "," + "Cloud Computing_" + dt.Rows[i]["Cloud Computing"].ToString() + "," +
 
