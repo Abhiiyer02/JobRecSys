@@ -22,7 +22,7 @@
                                         <table style="width: 85%;">
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>UserId</strong></td>
+                                                    <strong>User Id</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtUserId" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
@@ -31,9 +31,9 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Password</strong></td>
+                                                    <strong>Password</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
-                                                    <asp:TextBox ID="txtPassword" runat="server" Width="200px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPassword" runat="server" Width="200px" TextMode="Password"></asp:TextBox>
                                                 </td>
                                                 <td style="text-align: left">
                                                     &nbsp;</td>
@@ -48,7 +48,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Name</strong></td>
+                                                    <strong>Name</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtName" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
@@ -57,7 +57,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Address</b></td>
+                                                    <b>Address</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtAddress" runat="server" Font-Size="Small" Height="75px" 
                                                         TextMode="MultiLine" Width="200px"></asp:TextBox>
@@ -71,7 +71,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Phone Number</b></td>
+                                                    <b>Phone Number</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtPhone" runat="server" Font-Size="Small" Width="200px"></asp:TextBox>
                                                 </td>
@@ -88,7 +88,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Email ID</b></td>
+                                                    <b>Email ID</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtEmailId" runat="server" Font-Size="Small" Width="200px"></asp:TextBox>
                                                 </td>
@@ -106,7 +106,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Resume</strong></td>
+                                                    <strong>Resume</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:FileUpload ID="fileuploadPhoto" runat="server" Width="200px" />
                                                 </td>
@@ -119,7 +119,7 @@
                                             </tr>                                   
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Skills</strong></td>
+                                                    <strong>Skills</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtSkills" runat="server" Height="150px" TextMode="MultiLine" 
                                                         Width="200px"></asp:TextBox>

@@ -29,7 +29,7 @@
                                         <table style="width: 85%;">
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Member Id</b></td>
+                                                    <b>Member Id</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtMemberId" runat="server" Font-Size="Small" Width="200px"></asp:TextBox>
                                                 </td>
@@ -42,7 +42,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Password</b></td>
+                                                    <b>Password</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtPassword" runat="server" Font-Size="Small" MaxLength="10" 
                                                         TextMode="Password" Width="200px"></asp:TextBox>
@@ -74,7 +74,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Name</strong></td>
+                                                    <strong>Name</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtName" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
@@ -83,7 +83,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>CompanyName</strong></td>
+                                                    <strong>Company Name</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtCompanyName" runat="server" Width="200px"></asp:TextBox>
                                                 </td>
@@ -96,7 +96,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Address</b></td>
+                                                    <b>Address</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtAddress" runat="server" Font-Size="Small" Height="75px" 
                                                         TextMode="MultiLine" Width="200px"></asp:TextBox>
@@ -110,7 +110,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Phone Number</b></td>
+                                                    <b>Phone Number</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtPhone" runat="server" Font-Size="Small" Width="200px"></asp:TextBox>
                                                 </td>
@@ -127,7 +127,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <b>Email ID</b></td>
+                                                    <b>Email ID</b><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtEmailId" runat="server" Font-Size="Small" Width="200px"></asp:TextBox>
                                                 </td>
@@ -145,7 +145,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Company Logo</strong></td>
+                                                    <strong>Company Logo</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:FileUpload ID="fileuploadPhoto" runat="server" Width="200px" />
                                                 </td>
@@ -158,7 +158,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align: left; width: 127px; font-size: small;">
-                                                    <strong>Receipt Number</strong></td>
+                                                    <strong>Receipt Number</strong><span style="color:red"> *</span></td>
                                                 <td style="text-align: left; width: 151px">
                                                     <asp:TextBox ID="txtReceipt" runat="server" Width="200px"></asp:TextBox>
                                                 </td>

@@ -85,7 +85,7 @@ namespace staffingProblemProject.Member
                     TableRow row = new TableRow();
 
                     TableCell cellResume = new TableCell();
-                    cellResume.Width = 150;
+                    cellResume.Width = 250;
                     cellResume.Font.Bold = true;
                     LinkButton lbtnResume = new LinkButton();
                     lbtnResume.ID ="res~" + tab.Rows[i]["UserId"].ToString();
