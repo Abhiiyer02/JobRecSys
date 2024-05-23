@@ -271,8 +271,10 @@ namespace staffingProblemProject.Member
             try
             {
                 BLL obj = new BLL();
-                string filePath = Server.MapPath("../Candidate/Files/TrainDataNumerical.csv");
+                string filePathNum = Server.MapPath("../Candidate/Files/TrainDataNumerical.csv");
+                string filePathWords = Server.MapPath("../Candidate/Files/AprioriTrainingDataset.xls");
                 string[] domains = { "Web Development", "DevOps", "Data Science", "Networks Engineering", "Cybersecurity", "Software Development", "Software Testing", "UI/UX Development", "Quality and Assurance", "Embedded Systems Development" };
+                string[] mapper = { "Beginner", "Intermediate", "Advanced", "Expert" };
 
                 DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
                 DataTable MLParams = obj.GetMLParamsById(s);
@@ -281,7 +283,7 @@ namespace staffingProblemProject.Member
                 {
                     throw new Exception("No data found for the given ID(s).");
                 }
-                string line = $"{MLParams.Rows[0]["SSLC"]},{MLParams.Rows[0]["PUC"]},{MLParams.Rows[0]["Communication"]}," +
+                string csv_line = $"{MLParams.Rows[0]["SSLC"]},{MLParams.Rows[0]["PUC"]},{MLParams.Rows[0]["Communication"]}," +
                               $"{MLParams.Rows[0]["ProblemSolving"]},{MLParams.Rows[0]["Networks"]},{MLParams.Rows[0]["OS"]}," +
                               $"{MLParams.Rows[0]["DBMS"]},{MLParams.Rows[0]["DSA"]},{MLParams.Rows[0]["CloudComputing"]}," +
                               $"{MLParams.Rows[0]["Containers"]},{MLParams.Rows[0]["SystemDesign"]},{MLParams.Rows[0]["Maths"]}," +
@@ -289,7 +291,7 @@ namespace staffingProblemProject.Member
                               $"{MLParams.Rows[0]["CC++"]},{MLParams.Rows[0]["Java"]}," +
                               $"{(Array.IndexOf(domains, Ad.Rows[0]["JobType"].ToString()) + 1)}";
 
-                File.AppendAllText(filePath, line + Environment.NewLine);
+                File.AppendAllText(filePathNum, csv_line + Environment.NewLine);
 
                 System.Diagnostics.Debug.WriteLine("Successfully wrote to the file.");
             }

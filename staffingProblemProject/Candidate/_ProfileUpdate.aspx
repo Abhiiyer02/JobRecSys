@@ -1,5 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Candidate/CandidateMP.Master" AutoEventWireup="true" CodeBehind="_ProfileUpdate.aspx.cs" Inherits="staffingProblemProject.Candidate._ProfileUpdate" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 32px;
+        }
+        .auto-style4 {
+            width: 16%
+        }
+        .auto-style6 {
+            width: 188px;
+        }
+        .auto-style7 {
+            width: 245px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <asp:Panel ID="panelRegister" runat="server">
@@ -141,314 +155,265 @@
                                             </tr>
                                         </table>
                                         <br/>
-  <h4 class="sec-head">Your Parameters</h4>
-    <table style="width: 95%;">
-        <tr>
-            <td>
-                <p> SSLC</p>
-            </td>
-            <td>
-                <asp:DropDownList ID="DropDownListSSLC" runat="server"> 
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <a href="#">
-                </a>DBMS</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListDBMS" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>
-                    Pre-University</p>
-            </td>
-            <td>
-                <asp:DropDownList ID="DropDownListPUC" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <a href="#">
-                </a>DSA</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListDS" runat="server">
-                     <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>
-                    Communication</p>
-            </td>
-            <td>
-                <asp:DropDownList ID="DropDownListCS" runat="server">
-                      <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-       </asp:DropDownList>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>Operating Systems</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListOS" runat="server">
-                   <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-               
-                    Problem Solving
-            </td>
-            <td>
-                <asp:DropDownList ID="DropDownListPSolving" runat="server">
-                   <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-       </asp:DropDownList>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>Cloud Computing</td>
-            <td>
-                
-                <asp:DropDownList ID="DropDownListCloud" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>
-                    Networks</p>
-            </td>
-            <td>
-                <asp:DropDownList ID="DropDownListNetworks" runat="server">
-           <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                     <asp:ListItem Value="4">Expert</asp:ListItem>
-       </asp:DropDownList>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                Containers</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListContainers" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a></td>
-        </tr>
-        <tr>
-            <td>
-                System Design</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListSD" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a></td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                Mathematics</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListM" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a></td>
-        </tr>
-        <tr>
-            <td>
-                Version Control Systems</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListVCS" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                Python</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListPython" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                JavaScript/TypeScript</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListJS" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                C/C++/C#</td>
-            <td>
-                <a href="#">
-                <asp:DropDownList ID="DropDownListCCCP" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">
-                Java</td>
-            <td class="auto-style1">
-                <a href="#">
-                <asp:DropDownList ID="DropDownListJava" runat="server">
-                    <asp:ListItem Value="1">Beginner </asp:ListItem>
-                    <asp:ListItem Value="2">Intermediate</asp:ListItem>
-                    <asp:ListItem Value="3">Advanced</asp:ListItem>
-                    <asp:ListItem Value="4">Expert</asp:ListItem>
-                </asp:DropDownList>
-                </a>
-            </td>
-            <td class="auto-style1">
-                </td>
-            <td class="auto-style1">
-                </td>
-            <td class="auto-style1">
-                </td>
-            <td class="auto-style1">
-                </td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-    <tr>
-        <td>
-            &nbsp;</td>
-        <td>
-            <asp:Button ID="btnSubmit" runat="server" Height="50px" 
-                onclick="btnSubmit_Click" Text="Submit" ValidationGroup="a" />
-        </td>
-        <td>
-            &nbsp;</td>
-        <td>
-            &nbsp;</td>
-        <td>
-            &nbsp;</td>
-        <td>
-            &nbsp;</td>
-</tr>
-    </table>
-</p>
-                                    </fieldset>
-                                    <br />
-                                    <br />
+ 
+                                    </fieldset><br />
                                 </td>
                             </tr>
                         </table>
                     </td>
-                       
-                        <caption>
-                            &nbsp;
-                    </caption>
                        
                  </table>        
         
          
         </div>
         </div>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <h4 class="sec-head">My Proficiencies in General</h4>
+            <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <table style="width: 95%;border-spacing:1rem;font-family:poppins">
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            SSLC</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListSSLC" runat="server" Width="127px">
+                            <asp:ListItem Value="1">40% - 60%</asp:ListItem>
+                            <asp:ListItem Value="2">60% - 75%</asp:ListItem>
+                            <asp:ListItem Value="3">75% - 90%</asp:ListItem>
+                            <asp:ListItem Value="4">&gt; 90%</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">DBMS</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListDBMS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                   </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            Pre-University</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListPUC" runat="server" Width="127px">
+                            <asp:ListItem Value="1">40% - 60%</asp:ListItem>
+                            <asp:ListItem Value="2">60% - 75%</asp:ListItem>
+                            <asp:ListItem Value="3">75% - 90%</asp:ListItem>
+                            <asp:ListItem Value="4">&gt; 90%</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style13"></td>
+                    <td class="auto-style6">DSA</td>
+                    <td class="auto-style8">
+                        <asp:DropDownList ID="DropDownListDS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                   </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            Communication</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListCS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">
+                        <p>
+                            Operating Systems</p>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListOS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            Problem Solving</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListPSolving" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">Cloud Computing</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListCloud" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            Networks</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListNetworks" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">Containers</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListContainers" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                   </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            System Design</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListSD" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">
+                        <p>Mathematics</p>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListM" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                   </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p class="auto-style16">
+                            Version Control Systems</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListVCS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList></td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">Python</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListPython" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            JavaScript/TypeScript</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListJS" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td class="auto-style6">
+                        <p>
+                            C/C++/C#</p>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListCCCP" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <p>
+                            Java</p>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownListJava" runat="server">
+                            <asp:ListItem Value="1">Beginner </asp:ListItem>
+                            <asp:ListItem Value="2">Intermediate</asp:ListItem>
+                            <asp:ListItem Value="3">Advanced</asp:ListItem>
+                            <asp:ListItem Value="4">Expert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style1"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="btnSubmit" runat="server" Height="38px" onclick="btnSubmit_Click" Text="Submit" ValidationGroup="a" Width="120px" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+    <br />
     <hr />
 
     <div class="container">
