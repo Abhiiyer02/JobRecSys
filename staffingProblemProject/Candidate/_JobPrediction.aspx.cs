@@ -42,34 +42,19 @@ namespace staffingProblemProject.Candidate
                 else
                 {
                     //TrainingDS();
-                    
-                    jobstxt.Visible = false;
-                    ResultAnnouncement.Visible = false;
-                    if (lblResult.Text != "")
+
+                    if (!IsPostBack)
                     {
-                        ResultAnnouncement.Visible = true;
-                        GetCompanyAds(lblResult.Text);
+                        jobstxt.Visible = false;
+                        ResultAnnouncement.Visible = false;
+                        if (lblResult.Text != "")
+                        {
+                            ResultAnnouncement.Visible = true;
+                            GetCompanyAds(lblResult.Text);
+                        }
+                        SetParams();
                     }
-                    //BLL forParams = new BLL();
-                    //DataTable userParams = forParams.GetMLParamsById(Session["UserId"].ToString());
-                    //DropDownListSSLC.SelectedItem.Value = userParams.Rows[0]["SSLC"].ToString();
-                    //DropDownListPUC.SelectedItem.Value = userParams.Rows[0]["PUC"].ToString();
-                    //DropDownListCS.SelectedItem.Value = userParams.Rows[0]["Communication"].ToString();
-                    //DropDownListPSolving.SelectedItem.Value = userParams.Rows[0]["ProblemSolving"].ToString();
-                    //DropDownListNetworks.SelectedItem.Value = userParams.Rows[0]["Networks"].ToString();
-                    //DropDownListOS.SelectedItem.Value = userParams.Rows[0]["OS"].ToString();
-                    //DropDownListDBMS.SelectedItem.Value = userParams.Rows[0]["DBMS"].ToString();
-                    //DropDownListDS.SelectedItem.Value = userParams.Rows[0]["DSA"].ToString();
-                    //DropDownListCloud.SelectedItem.Value = userParams.Rows[0]["CloudComputing"].ToString();
-                    //DropDownListContainers.SelectedItem.Value = userParams.Rows[0]["Containers"].ToString();
-                    //DropDownListSD.SelectedItem.Value = userParams.Rows[0]["SystemDesign"].ToString();
-                    //DropDownListM.SelectedItem.Value = userParams.Rows[0]["Maths"].ToString();
-                    //DropDownListVCS.SelectedItem.Value = userParams.Rows[0]["VersionControl"].ToString();
-                    //DropDownListPython.SelectedItem.Value = userParams.Rows[0]["Python"].ToString();
-                    //DropDownListJS.SelectedItem.Value = userParams.Rows[0]["JSTS"].ToString();
-                    //DropDownListCCCP.SelectedItem.Value = userParams.Rows[0]["CC++"].ToString();
-                    //DropDownListJava.SelectedItem.Value = userParams.Rows[0]["Java"].ToString();
-                    SetParams();               }
+                }
             }
             catch
             {

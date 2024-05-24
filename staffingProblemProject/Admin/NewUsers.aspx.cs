@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Net.Mail;
 
 namespace staffingProblemProject.Admin
 {
@@ -173,26 +174,51 @@ namespace staffingProblemProject.Admin
                     {
                         CheckBox chk = (CheckBox)Table1.FindControl(tab.Rows[q]["MemberId"].ToString());
 
-                        tab1 = obj.GetMemberById(chk.ID.ToString());
-
                         if (chk.Checked)
                         {
-                            obj.UpdateStatus("Approved", chk.ID.ToString());
-                            //Emails.MailSender.SendEmail("soujanyapes@gmail.com", "sahasouju", tab1.Rows[0]["EmailId"].ToString(), "Approved", "Registration Details Approved Successfully", "");
-                        }
-                        ++q;
+                            try
+                            {
+                                DataTable Member = obj.GetMemberById(chk.ID.ToString());
 
-                       
-                        
+                                MailMessage mail = new MailMessage();
+                                mail.To.Add(Member.Rows[0]["EmailId"].ToString());
+                                mail.From = new MailAddress("onlinenotes56@gmail.com", "Job Portal", System.Text.Encoding.UTF8);
+                                mail.Subject = "Job Portal welcomes you " + Member.Rows[0]["CompanyName"].ToString();
+                                mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                                mail.Body = "Your transaction ID <strong>" + Member.Rows[0]["ReceiptNumber"] + "</strong> has been verified.<br />Welcome to <strong>Job Portal</strong>. Now you are authorized to avail our services<br />Hope we help you connect to skilled and talented professionals and become a part of your success journey!!";
+                                mail.BodyEncoding = System.Text.Encoding.UTF8;
+                                mail.IsBodyHtml = true;
+                                mail.Priority = MailPriority.High;
+                                SmtpClient client = new SmtpClient();
+                                client.Credentials = new System.Net.NetworkCredential("onlinenotes56@gmail.com", "kwaaisxwvqjwbdnz");
+                                client.Port = 587;
+                                client.Host = "smtp.gmail.com";
+                                client.EnableSsl = true;
+                                client.Send(mail);
+
+                                obj.UpdateStatus("Approved", chk.ID.ToString()); 
+                            }
+                            catch (Exception ex)
+                            {
+                                Exception ex2 = ex;
+                                string errorMessage = string.Empty;
+                                while (ex2 != null)
+                                {
+                                    errorMessage += ex2.ToString();
+                                    ex2 = ex2.InnerException;
+                                }
+                                ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Sending Failed...');}</script>");
+                            }
+                        }
+                        ++q;   
                     }
                     
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Users Approved Successfully')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Users Approved and Notified Successfully')</script>");
                     GetNewUsers();
                 }
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Select the users')</script>");
-
                 }
             }
             catch
@@ -216,24 +242,51 @@ namespace staffingProblemProject.Admin
                     for (int i = 1; i < Table1.Rows.Count; i++)
                     {
                         CheckBox chk = (CheckBox)Table1.FindControl(tab.Rows[q]["MemberId"].ToString());
-                        tab1 = obj.GetMemberById(chk.ID.ToString());
 
                         if (chk.Checked)
                         {
-                            obj.DeleteMember(chk.ID.ToString());
-                            //Emails.MailSender.SendEmail("soujanyapes@gmail.com", "sahasouju", tab1.Rows[0]["EmailId"].ToString(), "Rejected", "Registration Details Rejected Successfully", "");
+                            try
+                            {
+                                DataTable Member = obj.GetMemberById(chk.ID.ToString());
+
+                                MailMessage mail = new MailMessage();
+                                mail.To.Add(Member.Rows[0]["EmailId"].ToString());
+                                mail.From = new MailAddress("onlinenotes56@gmail.com", "Job Portal", System.Text.Encoding.UTF8);
+                                mail.Subject = "Job Portal Registration Process Failure Alert for " + Member.Rows[0]["CompanyName"].ToString();
+                                mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                                mail.Body = "Your transaction ID <strong>" + Member.Rows[0]["ReceiptNumber"] + "</strong> doesn't exist<br />Please ensure you have entered a valid tracsaction ID. If you think the details entered are correct to the best of your knowledge, contact the Job Portal Administrator immediately!!";
+                                mail.BodyEncoding = System.Text.Encoding.UTF8;
+                                mail.IsBodyHtml = true;
+                                mail.Priority = MailPriority.High;
+                                SmtpClient client = new SmtpClient();
+                                client.Credentials = new System.Net.NetworkCredential("onlinenotes56@gmail.com", "kwaaisxwvqjwbdnz");
+                                client.Port = 587;
+                                client.Host = "smtp.gmail.com";
+                                client.EnableSsl = true;
+                                client.Send(mail);
+
+                                obj.DeleteMember(chk.ID.ToString());
+                            }
+                            catch (Exception ex)
+                            {
+                                Exception ex2 = ex;
+                                string errorMessage = string.Empty;
+                                while (ex2 != null)
+                                {
+                                    errorMessage += ex2.ToString();
+                                    ex2 = ex2.InnerException;
+                                }
+                            }
                         }
                         ++q;
-
                     }
 
-                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Users Rejected Successfully')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Users Rejected and Notified Successfully')</script>");
                     GetNewUsers();
                 }
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "Key", "<script>alert('Select the users')</script>");
-
                 }
             }
             catch
