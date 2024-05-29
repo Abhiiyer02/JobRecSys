@@ -40,7 +40,7 @@ namespace staffingProblemProject.Member
 
             DataTable tabAds = new DataTable();
             tabAds.Rows.Clear();
-            tabAds = obj.GetCandidatesByAdId(int.Parse(Request.QueryString["adId"].ToString()));
+            tabAds = obj.GetCandidatesByAdIdApplied(int.Parse(Request.QueryString["adId"].ToString()));
 
             if (tabAds.Rows.Count > 0)
             {
@@ -278,12 +278,11 @@ namespace staffingProblemProject.Member
 
             try
             {
-                if (obj.CheckShortlist(s[1], int.Parse(Request.QueryString["adId"].ToString()))) 
+                if (obj.GetApplication(s[1], int.Parse(Request.QueryString["adId"].ToString())).Rows[0]["Status"].ToString() == "APPLIED") 
                 {
                     DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
                     DataTable User = obj.GetUserById(s[1]);
-                    obj.InsertShortlist(s[1], int.Parse(Request.QueryString["adId"].ToString()));
-                    obj.DeleteJobApplication(s[1], int.Parse(Request.QueryString["adId"].ToString()));
+                    obj.UpdateApplicationStatus(s[1], int.Parse(Request.QueryString["adId"].ToString()), "SHORTLISTED");
                     
                     MailMessage mail = new MailMessage();
                     mail.To.Add(User.Rows[0][5].ToString());

@@ -40,7 +40,7 @@ namespace staffingProblemProject.Member
 
             DataTable tabAds = new DataTable();
             tabAds.Rows.Clear();
-            tabAds = obj.GetShortlistsByAdId(int.Parse(Request.QueryString["adId"].ToString()));
+            tabAds = obj.GetCandidatesByAdIdShortOrOffered(int.Parse(Request.QueryString["adId"].ToString()));
 
             if (tabAds.Rows.Count > 0)
             {
@@ -165,7 +165,9 @@ namespace staffingProblemProject.Member
                         TableRow row = new TableRow();
 
                         DataTable tab = new DataTable();
+                        DataTable Application = new DataTable();
                         tab = obj.GetUserById(arrayRecords[i].ToString());
+                        Application = obj.GetApplication(arrayRecords[i].ToString(), int.Parse(Request.QueryString["adId"].ToString()));
 
                         TableCell cellResume = new TableCell();
                         cellResume.Width = 250;
@@ -203,12 +205,12 @@ namespace staffingProblemProject.Member
                         Button btn_shortlist = new Button();
                         btn_shortlist.ID = "offer~" + tab.Rows[0]["UserId"].ToString();
 
-                        if (obj.CheckJobOffer(tab.Rows[0]["UserId"].ToString(), int.Parse(Request.QueryString["adId"].ToString())))
+                        if (Application.Rows[0]["Status"].ToString() == "SHORTLISTED")
                         {
                             btn_shortlist.Text = "OFFER JOB";
                             btn_shortlist.OnClientClick = "return confirm('Are you sure want to send a JOB OFFER to this Applicant ?')";
                         }
-                        else
+                        else if (Application.Rows[0]["Status"].ToString() == "JOB OFFERED")
                         {
                             btn_shortlist.Text = "JOB OFFERED";
                             btn_shortlist.BackColor = System.Drawing.Color.LimeGreen;
@@ -309,11 +311,11 @@ namespace staffingProblemProject.Member
 
             try
             {
-                if (obj.CheckJobOffer(s[1], int.Parse(Request.QueryString["adId"].ToString())))
+                if (obj.GetApplication(s[1], int.Parse(Request.QueryString["adId"].ToString())).Rows[0]["Status"].ToString() == "SHORTLISTED")
                 {
                     DataTable Ad = obj.GetAdsById(int.Parse(Request.QueryString["adId"].ToString()));
                     DataTable User = obj.GetUserById(s[1]);
-                    obj.InsertJobOffer(s[1], int.Parse(Request.QueryString["adId"].ToString()));
+                    obj.UpdateApplicationStatus(s[1], int.Parse(Request.QueryString["adId"].ToString()), "JOB OFFERED");
 
                     //Function to write into Dataset
                     writeIntoCSV(s[1]); 

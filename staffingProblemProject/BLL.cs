@@ -16,8 +16,6 @@ namespace staffingProblemProject
         tblJobAdsTableAdapter adsObj = new tblJobAdsTableAdapter();
 
         tblApplyJobsTableAdapter applyObj = new tblApplyJobsTableAdapter();
-        tblShortlistsTableAdapter shortlistObj = new tblShortlistsTableAdapter();
-        tblJobOffersTableAdapter jobOfferObj = new tblJobOffersTableAdapter();
         tblMLParamsTableAdapter MLParamsObj = new tblMLParamsTableAdapter();
         #region ----- User Account -----
 
@@ -260,14 +258,34 @@ namespace staffingProblemProject
             return applyObj.GetCandidatesByAdId(adId);
         }
 
-        public void InsertApplyJob(string userId, int adId)
+        public DataTable GetApplication(string userId, int adId)
         {
-            applyObj.InsertApplyJob(userId, adId);
+            return applyObj.GetApplication(userId, adId);
+        }
+
+        public DataTable GetCandidatesByAdIdApplied(int adId)
+        {
+            return applyObj.GetCandidatesByAdIdApplied(adId);
+        }
+
+        public DataTable GetCandidatesByAdIdShortOrOffered(int adId)
+        {
+            return applyObj.GetCandidatesByAdIdShortOrOffered(adId);
+        }
+
+        public void InsertApplyJob(string userId, int adId, string status)
+        {
+            applyObj.InsertApplyJob(userId, adId, status);
+        }
+
+        public void UpdateApplicationStatus(string userId, int adId, string status)
+        {
+            applyObj.UpdateApplicationStatus(status, userId, adId);
         }
 
         public bool CheckUserAd(string userId, int adId)
         {
-            int cnt = int.Parse(applyObj.CheckUserAd(adId,userId).ToString());
+            int cnt = int.Parse(applyObj.CheckUserAd(userId, adId).ToString());
 
             if (cnt == 1)
 
@@ -276,48 +294,6 @@ namespace staffingProblemProject
             return true;
         }
 
-        public void InsertShortlist(string userId, int adId)
-        {
-            shortlistObj.InsertShortlist(userId, adId);
-        }
-
-        public DataTable GetShortlistsByAdId(int adId)
-        {
-            return shortlistObj.GetShortlistsByAdId(adId);
-        }
-
-        public bool CheckShortlist(string userId, int adId)
-        {
-            int cnt = int.Parse(shortlistObj.CheckShortlist(userId, adId).ToString());
-
-            if (cnt == 1)
-
-                return false;
-
-            return true;
-        }
-
-        public void InsertJobOffer(string userId, int adId)
-        {
-            jobOfferObj.InsertJobOffer(userId, adId);
-        }
-
-        public bool CheckJobOffer(string userId, int adId)
-        {
-            int cnt = int.Parse(jobOfferObj.CheckJobOffer(userId, adId).ToString());
-
-            if (cnt == 1)
-
-                return false;
-
-            return true;
-        }
-
-        //Queries for DAtabse Entries
-        //public bool GetMLParams(string userID, int sslc, int puc, int comms, int  ps, int networks, int sysDesign, int vcs, int jsts, int java, int dbms, int dsa, int os, int cloud, int containers, int math, int python)
-        //{
-        //    return MLParamsObj.GetMLParamsById();
-        //}
         public DataTable GetMLParamsById(string userId)
         {
             return MLParamsObj.GetMLParamsById(userId);

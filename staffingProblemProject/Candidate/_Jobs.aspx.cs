@@ -183,7 +183,7 @@ namespace staffingProblemProject.Candidate
                 {
                     DataTable Ad = obj.GetAdsById(int.Parse(s[1]));
                     DataTable User = obj.GetUserById(Session["UserId"].ToString());
-                    obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]));
+                    obj.InsertApplyJob(Session["UserId"].ToString(), int.Parse(s[1]), "APPLIED");
                     MailMessage mail = new MailMessage();
                     mail.To.Add(User.Rows[0][5].ToString());
                     mail.From = new MailAddress("onlinenotes56@gmail.com","Job Portal",  System.Text.Encoding.UTF8);
